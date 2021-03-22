@@ -12,18 +12,18 @@
         <button
           class="checker-btn order-checker"
           :class="{ 'not-active': !checkerBtn1, active: checkerBtn1 }"
+          @click="orderFetcher"
         ></button>
         <button
           class="checker-btn payment-checker"
           :class="{ 'not-active': !checkerBtn2, active: checkerBtn2 }"
+          @click="paymentFetcher"
         ></button>
         <button
           class="checker-btn delivery-checker"
           :class="{ 'not-active': !checkerBtn3, active: checkerBtn3 }"
+          @click="deliveryFetcher"
         ></button>
-        <!-- <input type="radio" name="order" :checked="radio1" />
-        <input type="radio" name="payment" :checked="radio2" />
-        <input type="radio" name="delivery" :checked="radio3" /> -->
       </div>
     </div>
   </div>
@@ -31,6 +31,7 @@
 
 <script>
 export default {
+  emits: ["orderClick", "paymentClick", "deliveryClick"],
   data() {
     return {};
   },
@@ -56,6 +57,17 @@ export default {
       } else {
         return false;
       }
+    },
+  },
+  methods: {
+    orderFetcher() {
+      this.$emit("orderClick");
+    },
+    paymentFetcher() {
+      this.$emit("paymentClick");
+    },
+    deliveryFetcher() {
+      this.$emit("deliveryClick");
     },
   },
 };
@@ -89,10 +101,6 @@ export default {
   outline: none;
   border-radius: 50%;
 }
-/* .dots input {
-  margin: 0 2px 0 2px;
-  cursor: pointer;
-} */
 .not-active {
   background-color: #cacaca;
 }

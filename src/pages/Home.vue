@@ -33,6 +33,9 @@
         v-for="step in steps"
         :key="step.name"
         :step="step"
+        @orderClick="orderTruth"
+        @paymentClick="paymentTruth"
+        @deliveryClick="deliveryTruth"
       ></howtoorder>
     </div>
   </div>
@@ -52,6 +55,7 @@ export default {
   data() {
     return {
       int: 0,
+      intervalData: null,
       searchPlaceholder: `Search for products (e.g. eggs, milk, potato)`,
       cateList: [
         "Fruits and Vegetables",
@@ -67,7 +71,7 @@ export default {
   },
   methods: {
     appear() {
-      setInterval(() => {
+      this.intervalData = setInterval(() => {
         this.int++;
         this.steps[this.int - 1].isHidden = true;
         if (this.int === 3) {
@@ -75,6 +79,39 @@ export default {
         }
         this.steps[this.int].isHidden = false;
       }, 3000);
+    },
+    orderTruth() {
+      this.int = 0;
+
+      // make false
+      this.steps[0].isHidden = false;
+      this.steps[1].isHidden = true;
+      this.steps[2].isHidden = true;
+
+      clearInterval(this.intervalData);
+      this.appear();
+    },
+    paymentTruth() {
+      this.int = 1;
+
+      // make false
+      this.steps[0].isHidden = true;
+      this.steps[1].isHidden = false;
+      this.steps[2].isHidden = true;
+
+      clearInterval(this.intervalData);
+      this.appear();
+    },
+    deliveryTruth() {
+      this.int = 2;
+
+      // make false
+      this.steps[0].isHidden = true;
+      this.steps[1].isHidden = true;
+      this.steps[2].isHidden = false;
+
+      clearInterval(this.intervalData);
+      this.appear();
     },
   },
   created() {
