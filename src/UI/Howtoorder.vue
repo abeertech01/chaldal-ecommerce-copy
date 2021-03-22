@@ -9,9 +9,21 @@
         <p class="text-center">{{ step.subTitle }}</p>
       </div>
       <div class="dots">
-        <input type="radio" name="order" :checked="radio1" />
+        <button
+          class="checker-btn order-checker"
+          :class="{ 'not-active': !checkerBtn1, active: checkerBtn1 }"
+        ></button>
+        <button
+          class="checker-btn payment-checker"
+          :class="{ 'not-active': !checkerBtn2, active: checkerBtn2 }"
+        ></button>
+        <button
+          class="checker-btn delivery-checker"
+          :class="{ 'not-active': !checkerBtn3, active: checkerBtn3 }"
+        ></button>
+        <!-- <input type="radio" name="order" :checked="radio1" />
         <input type="radio" name="payment" :checked="radio2" />
-        <input type="radio" name="delivery" :checked="radio3" />
+        <input type="radio" name="delivery" :checked="radio3" /> -->
       </div>
     </div>
   </div>
@@ -24,21 +36,21 @@ export default {
   },
   props: ["step"],
   computed: {
-    radio1() {
+    checkerBtn1() {
       if (this.step.name === "order") {
         return true;
       } else {
         return false;
       }
     },
-    radio2() {
+    checkerBtn2() {
       if (this.step.name === "payment") {
         return true;
       } else {
         return false;
       }
     },
-    radio3() {
+    checkerBtn3() {
       if (this.step.name === "delivery") {
         return true;
       } else {
@@ -69,11 +81,22 @@ export default {
   position: absolute;
   bottom: 0;
 }
-.dots input {
+.checker-btn {
+  width: 11px;
+  height: 11px;
+  margin: 0 2px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+/* .dots input {
   margin: 0 2px 0 2px;
   cursor: pointer;
+} */
+.not-active {
+  background-color: #cacaca;
 }
 .active {
-  color: #ff686e;
+  background-color: #ff686e;
 }
 </style>
