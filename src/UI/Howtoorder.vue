@@ -9,9 +9,9 @@
         <p class="text-center">{{ step.subTitle }}</p>
       </div>
       <div class="dots">
-        <button><i class="fas fa-circle"></i></button>
-        <button><i class="fas fa-circle"></i></button>
-        <button><i class="fas fa-circle"></i></button>
+        <input type="radio" name="order" :checked="radio1" />
+        <input type="radio" name="payment" :checked="radio2" />
+        <input type="radio" name="delivery" :checked="radio3" />
       </div>
     </div>
   </div>
@@ -19,7 +19,33 @@
 
 <script>
 export default {
+  data() {
+    return {};
+  },
   props: ["step"],
+  computed: {
+    radio1() {
+      if (this.step.name === "order") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    radio2() {
+      if (this.step.name === "payment") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    radio3() {
+      if (this.step.name === "delivery") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
 };
 </script>
 
@@ -43,12 +69,9 @@ export default {
   position: absolute;
   bottom: 0;
 }
-.dots button {
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 10px;
-  color: rgb(146, 146, 146);
+.dots input {
+  margin: 0 2px 0 2px;
+  cursor: pointer;
 }
 .active {
   color: #ff686e;
