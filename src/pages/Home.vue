@@ -35,7 +35,7 @@
         How to order from Alupotol ?
       </div>
       <howtoorder
-        class="step w-100 mt-4"
+        class="step mt-4"
         v-for="step in steps"
         :key="step.name"
         :step="step"
@@ -44,12 +44,34 @@
         @deliveryClick="deliveryTruth"
       ></howtoorder>
     </div>
+
+    <!-- Testimonies -->
+    <div class="testimonies">
+      <h1 class="testimony-head text-center">What our clients are saying</h1>
+      <testimony
+        class="each-testimony container"
+        v-for="t in testimonies"
+        :key="t.id"
+        :testimony="t"
+        @c1Click="c1Truth"
+        @c2Click="c2Truth"
+        @c3Click="c3Truth"
+      ></testimony>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-5">
+      <h3 class="text-center">
+        <i class="fa fa-copyright" aria-hidden="true"></i> Made By Abeer
+      </h3>
+    </footer>
   </div>
 </template>
 
 <script>
 import ProdCategory from "../UI/ProdCategory.vue";
 import Howtoorder from "../UI/Howtoorder.vue";
+import Testimony from "../UI/Testimony.vue";
 
 import { mapGetters } from "vuex";
 
@@ -57,11 +79,14 @@ export default {
   components: {
     ProdCategory,
     Howtoorder,
+    Testimony,
   },
   data() {
     return {
-      int: 0,
-      intervalData: null,
+      testimonyInt: 0,
+      tIntervalData: null,
+      orderInt: 0,
+      oIntervalData: null,
       searchPlaceholder: `Search for products (e.g. eggs, milk, potato)`,
       cateList: [
         "Fruits and Vegetables",
@@ -73,56 +98,104 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["steps"]),
+    ...mapGetters(["steps", "testimonies"]),
   },
   methods: {
-    appear() {
-      this.intervalData = setInterval(() => {
-        this.int++;
-        this.steps[this.int - 1].isHidden = true;
-        if (this.int === 3) {
-          this.int = 0;
+    // For How To Order
+    appearOrderManual() {
+      this.oIntervalData = setInterval(() => {
+        this.orderInt++;
+        this.steps[this.orderInt - 1].isHidden = true;
+        if (this.orderInt === 3) {
+          this.orderInt = 0;
         }
-        this.steps[this.int].isHidden = false;
+        this.steps[this.orderInt].isHidden = false;
       }, 3000);
     },
     orderTruth() {
-      this.int = 0;
+      this.orderInt = 0;
 
       // make false
       this.steps[0].isHidden = false;
       this.steps[1].isHidden = true;
       this.steps[2].isHidden = true;
 
-      clearInterval(this.intervalData);
-      this.appear();
+      clearInterval(this.oIntervalData);
+      this.appearOrderManual();
     },
     paymentTruth() {
-      this.int = 1;
+      this.orderInt = 1;
 
       // make false
       this.steps[0].isHidden = true;
       this.steps[1].isHidden = false;
       this.steps[2].isHidden = true;
 
-      clearInterval(this.intervalData);
-      this.appear();
+      clearInterval(this.oIntervalData);
+      this.appearOrderManual();
     },
     deliveryTruth() {
-      this.int = 2;
+      this.orderInt = 2;
 
       // make false
       this.steps[0].isHidden = true;
       this.steps[1].isHidden = true;
       this.steps[2].isHidden = false;
 
-      clearInterval(this.intervalData);
-      this.appear();
+      clearInterval(this.oIntervalData);
+      this.appearOrderManual();
+    },
+
+    // For Testimonies
+    appearTestimonies() {
+      this.tIntervalData = setInterval(() => {
+        this.testimonyInt++;
+        this.testimonies[this.testimonyInt - 1].isHidden = true;
+        if (this.testimonyInt === 3) {
+          this.testimonyInt = 0;
+        }
+        this.testimonies[this.testimonyInt].isHidden = false;
+      }, 5000);
+    },
+    c1Truth() {
+      this.testimonyInt = 0;
+
+      // make false
+      this.testimonies[0].isHidden = false;
+      this.testimonies[1].isHidden = true;
+      this.testimonies[2].isHidden = true;
+
+      clearInterval(this.tIntervalData);
+      this.appearTestimonies();
+    },
+    c2Truth() {
+      this.testimonyInt = 1;
+
+      // make false
+      this.testimonies[0].isHidden = true;
+      this.testimonies[1].isHidden = false;
+      this.testimonies[2].isHidden = true;
+
+      clearInterval(this.tIntervalData);
+      this.appearTestimonies();
+    },
+    c3Truth() {
+      this.testimonyInt = 2;
+
+      // make false
+      this.testimonies[0].isHidden = true;
+      this.testimonies[1].isHidden = true;
+      this.testimonies[2].isHidden = false;
+
+      clearInterval(this.tIntervalData);
+      this.appearTestimonies();
     },
   },
   created() {
-    this.steps[this.int].isHidden = false;
-    this.appear();
+    this.steps[this.orderInt].isHidden = false;
+    this.testimonies[this.testimonyInt].isHidden = false;
+    this.appearOrderManual();
+    this.appearTestimonies();
   },
 };
 </script>
@@ -181,7 +254,8 @@ export default {
   background-position: center;
 }
 .product-categories .cate-head,
-.howtoorder-head {
+.howtoorder-head,
+.testimony-head {
   font-size: 28px;
   font-weight: lighter;
 }
@@ -193,5 +267,11 @@ export default {
 }
 .step {
   margin: 0 auto 0 auto;
+}
+.testimonies {
+  margin: 80px 0;
+}
+footer {
+  background-color: #fdd670;
 }
 </style>

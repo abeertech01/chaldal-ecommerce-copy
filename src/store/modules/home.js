@@ -20,6 +20,26 @@ export default {
         isHidden: true,
       },
     ],
+    testimonies: [
+      {
+        id: 'dp1',
+        name: 'Rakib Hossain',
+        comment: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus in maiores, modi rerum similique aliquam ut eius! Est, amet dicta.',
+        isHidden: true,
+      },
+      {
+        id: 'dp2',
+        name: 'Belal Hasan',
+        comment: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque temporibus aperiam, accusamus facilis blanditiis aspernatur deleniti ratione placeat totam saepe, suscipit voluptates?',
+        isHidden: true,
+      },
+      {
+        id: 'dp3',
+        name: 'Mizanur Rahman',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui reprehenderit cumque dolores expedita quam. Enim nostrum eveniet dolorum.',
+        isHidden: true,
+      }
+    ]
   },
   mutations: {
 
@@ -29,7 +49,10 @@ export default {
   },
   getters: {
     steps(state) {
-      return state.steps
+      return state.steps;
+    },
+    testimonies(state) {
+      return state.testimonies;
     }
   }
 }

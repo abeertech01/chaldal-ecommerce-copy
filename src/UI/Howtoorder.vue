@@ -76,7 +76,7 @@ export default {
 <style scoped>
 .howtoorder {
   height: 300px;
-  width: 500px;
+  width: 900px;
   border: 1px solid rgb(153, 153, 153);
   border-radius: 8px;
 }

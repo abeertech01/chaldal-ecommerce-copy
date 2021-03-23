@@ -97,15 +97,19 @@ nav ul {
   padding: 0;
   height: inherit;
   width: 510px;
-  /* flex-shrink: 0; */
+  /* background-color: lightsalmon; */
 }
 nav ul li {
   display: inline-block;
-  height: inherit;
-  padding: 15px 0;
-  font-size: 15px;
+  height: 100%;
   text-align: center;
   border-left: 0.5px solid rgb(158, 158, 158);
+}
+nav ul li a {
+  display: block;
+  padding: 15px 0;
+  height: 100%;
+  font-size: 15px;
 }
 .location,
 .help,
