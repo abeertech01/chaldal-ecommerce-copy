@@ -99,6 +99,13 @@ export default {
   },
   computed: {
     ...mapGetters(["steps", "testimonies"]),
+    // fruitsVegPage() {
+    //   if ((this.cate = "Fruits and Vegetables")) {
+    //     return "/fruits-vegetables";
+    //   } else {
+    //     return "0";
+    //   }
+    // },
   },
   methods: {
     // For How To Order
@@ -239,7 +246,7 @@ export default {
 .ad1 {
   display: inline-block;
   height: 150px;
-  width: 49.5%;
+  width: 49.9%;
   background-image: url("https://source.unsplash.com/1600x900/?supermarket,vegetables,ingredients,cooking");
   background-size: cover;
   background-position: center;
@@ -248,7 +255,7 @@ export default {
   display: inline;
   float: right;
   height: 150px;
-  width: 49.5%;
+  width: 49.9%;
   background-image: url("https://source.unsplash.com/1600x900/?cooking,ingredients,vegetables,supermarket");
   background-size: cover;
   background-position: center;
