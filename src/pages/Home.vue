@@ -10,6 +10,12 @@
       </div>
     </div>
 
+    <!-- Ad -->
+    <div class="ad container mt-3">
+      <div class="ad1"></div>
+      <div class="ad2"></div>
+    </div>
+
     <!-- Product Categories -->
     <div class="product-categories container mt-4">
       <div class="cate-head mb-2 text-center">Our Product Categories</div>
@@ -156,6 +162,23 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.ad1 {
+  display: inline-block;
+  height: 150px;
+  width: 49.5%;
+  background-image: url("https://source.unsplash.com/1600x900/?supermarket,vegetables,ingredients,cooking");
+  background-size: cover;
+  background-position: center;
+}
+.ad2 {
+  display: inline;
+  float: right;
+  height: 150px;
+  width: 49.5%;
+  background-image: url("https://source.unsplash.com/1600x900/?cooking,ingredients,vegetables,supermarket");
+  background-size: cover;
+  background-position: center;
 }
 .product-categories .cate-head,
 .howtoorder-head {
