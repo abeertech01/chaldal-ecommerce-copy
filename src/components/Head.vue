@@ -5,10 +5,10 @@
       <a class="menu-icon pt-1 text-dark" href="#"
         ><i class="fas fa-bars"></i
       ></a>
-      <a class="logo text-dark" href="#">
+      <router-link to="/" class="logo text-dark">
         <img src="../assets/egg.png" alt="" />
         <span class="logo-name font-weight-bold">Alupotol</span>
-      </a>
+      </router-link>
       <input
         class="search-input"
         type="text"

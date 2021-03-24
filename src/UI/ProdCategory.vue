@@ -12,10 +12,8 @@
 <script>
 export default {
   props: ["category", "iconIndex"],
+  emits: ["typesPage"],
   computed: {
-    // srcImage() {
-    //   return "../icons/" + this.cateIcon + ".png";
-    // },
     cateIcon() {
       if (this.iconIndex === 0) {
         return "vegetables";
@@ -32,6 +30,7 @@ export default {
   },
   methods: {
     cateClick() {
+      this.$emit("typesPage", this.category);
       console.log(this.category);
     },
   },

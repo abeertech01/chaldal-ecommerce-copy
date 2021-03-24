@@ -1,40 +1,40 @@
 <template>
-  <div class="fruits-vegetables">
+  <div class="cooking">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Fruits & Vegetables</h4>
+      <h4 class="name">Cooking</h4>
       <hr />
     </div>
     <div class="all-types">
-      <fruits-veg-types
-        v-for="fv in fruitsVegTypes"
-        :key="fv.imgName"
-        :fv="fv"
-      ></fruits-veg-types>
+      <cooking-types
+        v-for="ct in cookingProdTypes"
+        :key="ct.imgName"
+        :ct="ct"
+      ></cooking-types>
     </div>
   </div>
 </template>
 
 <script>
 import AdsOnTop from "../components/AdsOnTop.vue";
-import FruitsVegTypes from "../UI/FruitsVegTypes.vue";
+import CookingTypes from "../UI/CookingTypes.vue";
 
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     AdsOnTop,
-    FruitsVegTypes,
+    CookingTypes,
   },
   computed: {
-    ...mapGetters(["fruitsVegTypes"]),
+    ...mapGetters(["cookingProdTypes"]),
   },
 };
 </script>
 
 <style scoped>
-.fruits-vegetables {
+.cooking {
   margin: 0 20px;
 }
 .headline {

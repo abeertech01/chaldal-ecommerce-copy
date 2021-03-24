@@ -1,40 +1,40 @@
 <template>
-  <div class="fruits-vegetables">
+  <div class="beverages">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Fruits & Vegetables</h4>
+      <h4 class="name">Beverages</h4>
       <hr />
     </div>
     <div class="all-types">
-      <fruits-veg-types
-        v-for="fv in fruitsVegTypes"
-        :key="fv.imgName"
-        :fv="fv"
-      ></fruits-veg-types>
+      <beverage-types
+        v-for="bt in beverageProdTypes"
+        :key="bt.imgName"
+        :bt="bt"
+      ></beverage-types>
     </div>
   </div>
 </template>
 
 <script>
 import AdsOnTop from "../components/AdsOnTop.vue";
-import FruitsVegTypes from "../UI/FruitsVegTypes.vue";
+import BeverageTypes from "../UI/BeverageTypes.vue";
 
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     AdsOnTop,
-    FruitsVegTypes,
+    BeverageTypes,
   },
   computed: {
-    ...mapGetters(["fruitsVegTypes"]),
+    ...mapGetters(["beverageProdTypes"]),
   },
 };
 </script>
 
 <style scoped>
-.fruits-vegetables {
+.beverages {
   margin: 0 20px;
 }
 .headline {

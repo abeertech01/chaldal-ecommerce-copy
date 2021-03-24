@@ -25,6 +25,7 @@
           :key="index"
           :category="cate"
           :icon-index="index"
+          @typesPage="goToPage"
         ></prod-category>
       </div>
     </div>
@@ -99,13 +100,6 @@ export default {
   },
   computed: {
     ...mapGetters(["steps", "testimonies"]),
-    // fruitsVegPage() {
-    //   if ((this.cate = "Fruits and Vegetables")) {
-    //     return "/fruits-vegetables";
-    //   } else {
-    //     return "0";
-    //   }
-    // },
   },
   methods: {
     // For How To Order
@@ -197,12 +191,42 @@ export default {
       clearInterval(this.tIntervalData);
       this.appearTestimonies();
     },
+
+    hideAll() {
+      // For Order
+      this.orderInt = 0;
+
+      this.steps[0].isHidden = true;
+      this.steps[1].isHidden = true;
+      this.steps[2].isHidden = true;
+
+      // For Testimonies
+      this.testimonyInt = 0;
+
+      this.testimonies[0].isHidden = true;
+      this.testimonies[1].isHidden = true;
+      this.testimonies[2].isHidden = true;
+
+      // Clear intervals
+      clearInterval(this.oIntervalData);
+      clearInterval(this.tIntervalData);
+    },
+
+    // Go To Types Page
+    goToPage(ev) {
+      if (ev === this.cateList[0]) {
+        this.$router.push("/fruits-vegetables");
+      } else if (ev === this.cateList[1]) {
+        this.$router.push("/cooking");
+      } else if (ev === this.cateList[2]) {
+        this.$router.push("/beverages");
+      }
+      this.hideAll();
+    },
   },
   created() {
-    this.steps[this.orderInt].isHidden = false;
-    this.testimonies[this.testimonyInt].isHidden = false;
-    this.appearOrderManual();
-    this.appearTestimonies();
+    this.orderTruth();
+    this.c1Truth();
   },
 };
 </script>
