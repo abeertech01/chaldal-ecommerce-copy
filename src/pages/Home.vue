@@ -220,6 +220,8 @@ export default {
         this.$router.push("/cooking");
       } else if (ev === this.cateList[2]) {
         this.$router.push("/beverages");
+      } else if (ev === this.cateList[3]) {
+        this.$router.push("/health-care");
       }
       this.hideAll();
     },

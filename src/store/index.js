@@ -5,6 +5,7 @@ import home from './modules/home';
 import fruitsAndVeg from './modules/fruitsAndVeg';
 import cooking from './modules/cooking';
 import beverages from './modules/beverages';
+import healthProducts from './modules/healthProducts';
 
 Vue.use(Vuex);
 
@@ -13,7 +14,8 @@ export default new Vuex.Store({
     home,
     fruitsAndVeg,
     cooking,
-    beverages
+    beverages,
+    healthProducts
   },
   state: {
     foodTypes: [
