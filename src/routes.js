@@ -11,6 +11,9 @@ import Vegetables from './pages/Vegetables.vue';
 import Spices from './pages/Spices.vue';
 import ColorsFlavors from './pages/ColorsFlavors.vue';
 
+import SoftDrinks from './pages/SoftDrinks.vue';
+import SyrupsPowders from './pages/SyrupsPowders.vue';
+
 export default [
   { path: '/', component: Home },
   { path: '/fruits-vegetables', component: FruitsAndVegetables },
@@ -24,4 +27,7 @@ export default [
 
   { path: '/spices', component: Spices },
   { path: '/colors-flavors', component: ColorsFlavors },
+
+  { path: '/soft-drinks', component: SoftDrinks },
+  { path: '/syrups-powders', component: SyrupsPowders }
 ]

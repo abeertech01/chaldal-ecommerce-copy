@@ -1,5 +1,5 @@
 <template>
-  <div class="soft-drinks">
+  <div class="syrups-powders">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
@@ -7,11 +7,11 @@
       <hr />
     </div>
     <div class="all-types">
-      <soft-drink
-        v-for="drink in softDrinks"
-        :key="drink.imgName"
-        :drink="drink"
-      ></soft-drink>
+      <syrup-powder
+        v-for="sDrink in syrupsPowders"
+        :key="sDrink.imgName"
+        :sDrink="sDrink"
+      ></syrup-powder>
     </div>
   </div>
 </template>
@@ -20,21 +20,21 @@
 import { mapGetters } from "vuex";
 
 import AdsOnTop from "../components/AdsOnTop.vue";
-import SoftDrink from "../UI/SoftDrink.vue";
+import SyrupPowder from "../UI/SyrupPowder.vue";
 
 export default {
   components: {
     AdsOnTop,
-    SoftDrink,
+    SyrupPowder,
   },
   computed: {
-    ...mapGetters(["softDrinks"]),
+    ...mapGetters(["syrupsPowders"]),
   },
 };
 </script>
 
 <style scoped>
-.soft-drinks {
+.syrups-powders {
   margin: 0 20px;
 }
 .headline {

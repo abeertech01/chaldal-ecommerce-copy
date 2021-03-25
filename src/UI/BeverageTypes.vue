@@ -1,5 +1,5 @@
 <template>
-  <div class="beverage-types">
+  <div class="beverage-types" @click="typeClick">
     <div>
       <img
         :src="require('../assets/' + bt.imgName + '.jpg')"
@@ -13,6 +13,15 @@
 <script>
 export default {
   props: ["bt"],
+  methods: {
+    typeClick() {
+      if (this.bt.imgName === "soft-drinks") {
+        this.$router.push("/soft-drinks");
+      } else {
+        this.$router.push("/syrups-powders");
+      }
+    },
+  },
 };
 </script>
 
@@ -20,6 +29,7 @@ export default {
 .beverage-types {
   display: inline-block;
   text-align: center;
+  cursor: pointer;
 }
 .beverage-types img {
   width: 280px;
