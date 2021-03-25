@@ -273,7 +273,7 @@ export default {
   display: inline-block;
   height: 150px;
   width: 49.9%;
-  background-image: url("https://source.unsplash.com/1600x900/?supermarket,vegetables,ingredients,cooking");
+  background-image: url("https://source.unsplash.com/1600x900/?vegetables,ingredients,cooking");
   background-size: cover;
   background-position: center;
 }
@@ -282,7 +282,7 @@ export default {
   float: right;
   height: 150px;
   width: 49.9%;
-  background-image: url("https://source.unsplash.com/1600x900/?cooking,ingredients,vegetables,supermarket");
+  background-image: url("https://source.unsplash.com/1600x900/?cooking,ingredients,vegetables");
   background-size: cover;
   background-position: center;
 }

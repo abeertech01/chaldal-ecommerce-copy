@@ -1,5 +1,5 @@
 <template>
-  <div class="cooking-types">
+  <div class="cooking-types" @click="typeClick">
     <div>
       <img
         :src="require('../assets/' + ct.imgName + '.jpg')"
@@ -13,6 +13,15 @@
 <script>
 export default {
   props: ["ct"],
+  methods: {
+    typeClick() {
+      if (this.ct.imgName === "spices") {
+        this.$router.push("/spices");
+      } else {
+        this.$router.push("/colors-flavors");
+      }
+    },
+  },
 };
 </script>
 
@@ -20,6 +29,7 @@ export default {
 .cooking-types {
   display: inline-block;
   text-align: center;
+  cursor: pointer;
 }
 .cooking-types img {
   width: 280px;

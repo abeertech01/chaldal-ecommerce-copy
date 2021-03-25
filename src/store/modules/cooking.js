@@ -9,7 +9,71 @@ export default {
         imgName: 'colors-flavors',
         name: 'Colors and Flavors'
       }
-    ]
+    ],
+    colorsFlavors: [
+      {
+        imgName: 'apple-cider',
+        name: 'Apple Cider Vinegar',
+        quantity: '473 ml',
+        price: '530 BDT.'
+      },
+      {
+        imgName: 'kasundi',
+        name: 'Kasundi',
+        quantity: '285 ml',
+        price: '45 BDT.',
+      },
+      {
+        imgName: 'soya-sauce',
+        name: 'Soya Sauce',
+        quantity: '600 ml',
+        price: '530 BDT.',
+      },
+      {
+        imgName: 'white-vinegar',
+        name: 'White Vinegar',
+        quantity: '473 ml',
+        price: '200 BDT.',
+      },
+      {
+        imgName: 'yellow-mustard',
+        name: 'Classic Yellow Mustard',
+        quantity: '255 gm',
+        price: '203 BDT.',
+      },
+    ],
+    spices: [
+      {
+        imgName: 'black-cumin',
+        name: 'Black Cumin(Kalo Jira)',
+        quantity: '100 gm',
+        price: '49 BDT.',
+      },
+      {
+        imgName: 'cinamon',
+        name: 'Cinamon(Daruchini)',
+        quantity: '100 gm',
+        price: '69 BDT.',
+      },
+      {
+        imgName: 'cumin-seeds',
+        name: 'Cumin Seeds(Jira)',
+        quantity: '100 gm',
+        price: '49 BDT.',
+      },
+      {
+        imgName: 'dried-chillies',
+        name: 'Dried Chillies(Shukna Morich)',
+        quantity: '100 gm',
+        price: '59 BDT.',
+      },
+      {
+        imgName: 'fennel-seeds',
+        name: 'Fennel Seeds(Mouri)',
+        quantity: '100 gm',
+        price: '15 BDT.',
+      },
+    ],
   },
   mutations: {
 
@@ -20,6 +84,12 @@ export default {
   getters: {
     cookingProdTypes(state) {
       return state.cookingProdTypes;
+    },
+    colorsFlavors(state) {
+      return state.colorsFlavors;
+    },
+    spices(state) {
+      return state.spices;
     }
   }
 }

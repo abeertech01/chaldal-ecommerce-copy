@@ -8,6 +8,9 @@ import Food from './pages/Food.vue';
 import Fruits from './pages/Fruits.vue';
 import Vegetables from './pages/Vegetables.vue';
 
+import Spices from './pages/Spices.vue';
+import ColorsFlavors from './pages/ColorsFlavors.vue';
+
 export default [
   { path: '/', component: Home },
   { path: '/fruits-vegetables', component: FruitsAndVegetables },
@@ -18,4 +21,7 @@ export default [
 
   { path: '/fruits', component: Fruits },
   { path: '/vegetables', component: Vegetables },
+
+  { path: '/spices', component: Spices },
+  { path: '/colors-flavors', component: ColorsFlavors },
 ]
