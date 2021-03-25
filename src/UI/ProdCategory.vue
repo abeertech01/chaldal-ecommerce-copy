@@ -31,7 +31,6 @@ export default {
   methods: {
     cateClick() {
       this.$emit("typesPage", this.category);
-      console.log(this.category);
     },
   },
 };
