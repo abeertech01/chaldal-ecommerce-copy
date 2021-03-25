@@ -14,6 +14,9 @@ import ColorsFlavors from './pages/ColorsFlavors.vue';
 import SoftDrinks from './pages/SoftDrinks.vue';
 import SyrupsPowders from './pages/SyrupsPowders.vue';
 
+import FoodSupplements from './pages/FoodSupplements.vue';
+import Antiseptics from './pages/Antiseptics.vue';
+
 export default [
   { path: '/', component: Home },
   { path: '/fruits-vegetables', component: FruitsAndVegetables },
@@ -29,5 +32,8 @@ export default [
   { path: '/colors-flavors', component: ColorsFlavors },
 
   { path: '/soft-drinks', component: SoftDrinks },
-  { path: '/syrups-powders', component: SyrupsPowders }
+  { path: '/syrups-powders', component: SyrupsPowders },
+
+  { path: '/food-supplements', component: FoodSupplements },
+  { path: '/antiseptics', component: Antiseptics },
 ]

@@ -1,5 +1,5 @@
 <template>
-  <div class="health-prod-types">
+  <div class="health-prod-types" @click="typeClick">
     <div>
       <img
         :src="require('../assets/' + ht.imgName + '.jpg')"
@@ -13,6 +13,15 @@
 <script>
 export default {
   props: ["ht"],
+  methods: {
+    typeClick() {
+      if (this.ht.imgName === "food-supplements") {
+        this.$router.push("/food-supplements");
+      } else {
+        this.$router.push("/antiseptics");
+      }
+    },
+  },
 };
 </script>
 
@@ -20,6 +29,7 @@ export default {
 .health-prod-types {
   display: inline-block;
   text-align: center;
+  cursor: pointer;
 }
 .health-prod-types img {
   width: 280px;
