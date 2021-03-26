@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import AdsOnTop from "../components/AdsOnTop.vue";
-import CookingTypes from "../UI/CookingTypes.vue";
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import CookingTypes from "../../UI/prodTypes/CookingTypes.vue";
 
 import { mapGetters } from "vuex";
 

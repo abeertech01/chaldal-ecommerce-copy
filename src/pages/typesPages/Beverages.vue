@@ -1,40 +1,40 @@
 <template>
-  <div class="food-supple">
+  <div class="beverages">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Food Supplements</h4>
+      <h4 class="name">Beverages</h4>
       <hr />
     </div>
     <div class="all-types">
-      <food-supplement
-        v-for="foodSupple in foodSupplements"
-        :key="foodSupple.imgName"
-        :foodSupple="foodSupple"
-      ></food-supplement>
+      <beverage-types
+        v-for="bt in beverageProdTypes"
+        :key="bt.imgName"
+        :bt="bt"
+      ></beverage-types>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import BeverageTypes from "../../UI/prodTypes/BeverageTypes.vue";
 
-import AdsOnTop from "../components/AdsOnTop.vue";
-import FoodSupplement from "../UI/FoodSupplement.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     AdsOnTop,
-    FoodSupplement,
+    BeverageTypes,
   },
   computed: {
-    ...mapGetters(["foodSupplements"]),
+    ...mapGetters(["beverageProdTypes"]),
   },
 };
 </script>
 
 <style scoped>
-.food-supple {
+.beverages {
   margin: 0 20px;
 }
 .headline {
@@ -52,5 +52,8 @@ hr {
   width: 500px;
   margin: 0 20px;
   font-weight: 300;
+}
+.all-types {
+  margin: 15px 0px;
 }
 </style>

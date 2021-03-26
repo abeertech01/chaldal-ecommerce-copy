@@ -1,17 +1,17 @@
 <template>
-  <div class="colors-flavors">
+  <div class="food-supple">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Colors and Flavors</h4>
+      <h4 class="name">Food Supplements</h4>
       <hr />
     </div>
     <div class="all-types">
-      <color-flavor
-        v-for="cf in colorsFlavors"
-        :key="cf.imgName"
-        :cf="cf"
-      ></color-flavor>
+      <food-supplement
+        v-for="foodSupple in foodSupplements"
+        :key="foodSupple.imgName"
+        :foodSupple="foodSupple"
+      ></food-supplement>
     </div>
   </div>
 </template>
@@ -19,22 +19,22 @@
 <script>
 import { mapGetters } from "vuex";
 
-import AdsOnTop from "../components/AdsOnTop.vue";
-import ColorFlavor from "../UI/ColorFlavor.vue";
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import FoodSupplement from "../../UI/everyProduct/FoodSupplement.vue";
 
 export default {
   components: {
     AdsOnTop,
-    ColorFlavor,
+    FoodSupplement,
   },
   computed: {
-    ...mapGetters(["colorsFlavors"]),
+    ...mapGetters(["foodSupplements"]),
   },
 };
 </script>
 
 <style scoped>
-.colors-flavors {
+.food-supple {
   margin: 0 20px;
 }
 .headline {

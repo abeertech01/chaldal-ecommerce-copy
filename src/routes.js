@@ -1,21 +1,21 @@
 import Home from './pages/Home.vue';
-import FruitsAndVegetables from './pages/FruitsAndVegetables.vue';
-import Cooking from './pages/Cooking.vue';
-import Beverages from './pages/Beverages.vue';
-import HealthCare from './pages/HealthCare.vue';
+import FruitsAndVegetables from './pages/typesPages/FruitsAndVegetables.vue';
+import Cooking from './pages/typesPages/Cooking.vue';
+import Beverages from './pages/typesPages/Beverages.vue';
+import HealthCare from './pages/typesPages/HealthCare.vue';
 import Food from './pages/Food.vue';
 
-import Fruits from './pages/Fruits.vue';
-import Vegetables from './pages/Vegetables.vue';
+import Fruits from './pages/productsPages/Fruits.vue';
+import Vegetables from './pages/productsPages/Vegetables.vue';
 
-import Spices from './pages/Spices.vue';
-import ColorsFlavors from './pages/ColorsFlavors.vue';
+import Spices from './pages/productsPages/Spices.vue';
+import ColorsFlavors from './pages/productsPages/ColorsFlavors.vue';
 
-import SoftDrinks from './pages/SoftDrinks.vue';
-import SyrupsPowders from './pages/SyrupsPowders.vue';
+import SoftDrinks from './pages/productsPages/SoftDrinks.vue';
+import SyrupsPowders from './pages/productsPages/SyrupsPowders.vue';
 
-import FoodSupplements from './pages/FoodSupplements.vue';
-import Antiseptics from './pages/Antiseptics.vue';
+import FoodSupplements from './pages/productsPages/FoodSupplements.vue';
+import Antiseptics from './pages/productsPages/Antiseptics.vue';
 
 export default [
   { path: '/', component: Home },

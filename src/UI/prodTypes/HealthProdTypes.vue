@@ -2,7 +2,7 @@
   <div class="health-prod-types" @click="typeClick">
     <div>
       <img
-        :src="require('../assets/' + ht.imgName + '.jpg')"
+        :src="require('../../assets/' + ht.imgName + '.jpg')"
         alt="ht.imgName"
       />
       <h4 class="name">{{ ht.name }}</h4>

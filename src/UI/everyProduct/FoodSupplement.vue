@@ -3,7 +3,7 @@
     <div>
       <img
         :src="
-          require('../prodImages/supplements/' + foodSupple.imgName + '.jpg')
+          require('../../prodImages/supplements/' + foodSupple.imgName + '.jpg')
         "
         :alt="foodSupple.imgName"
       />

@@ -2,7 +2,9 @@
   <div class="vegetable">
     <div>
       <img
-        :src="require('../prodImages/vegetables/' + vegetable.imgName + '.jpg')"
+        :src="
+          require('../../prodImages/vegetables/' + vegetable.imgName + '.jpg')
+        "
         alt="vegetable.imgName"
       />
       <h4 class="name">{{ vegetable.name }}</h4>

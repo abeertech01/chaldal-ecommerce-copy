@@ -1,40 +1,39 @@
 <template>
-  <div class="syrups-powders">
+  <div class="vegetables">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Soft Drinks</h4>
+      <h4 class="name">Fresh Vegetables</h4>
       <hr />
     </div>
     <div class="all-types">
-      <syrup-powder
-        v-for="sDrink in syrupsPowders"
-        :key="sDrink.imgName"
-        :sDrink="sDrink"
-      ></syrup-powder>
+      <vegetable
+        v-for="vegetable in vegetables"
+        :key="vegetable.imgName"
+        :vegetable="vegetable"
+      ></vegetable>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-
-import AdsOnTop from "../components/AdsOnTop.vue";
-import SyrupPowder from "../UI/SyrupPowder.vue";
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import Vegetable from "../../UI/everyProduct/Vegetable.vue";
 
 export default {
   components: {
     AdsOnTop,
-    SyrupPowder,
+    Vegetable,
   },
   computed: {
-    ...mapGetters(["syrupsPowders"]),
+    ...mapGetters(["vegetables"]),
   },
 };
 </script>
 
 <style scoped>
-.syrups-powders {
+.vegetables {
   margin: 0 20px;
 }
 .headline {

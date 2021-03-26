@@ -1,40 +1,40 @@
 <template>
-  <div class="health-care">
+  <div class="syrups-powders">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Health Care</h4>
+      <h4 class="name">Soft Drinks</h4>
       <hr />
     </div>
     <div class="all-types">
-      <health-prod-types
-        v-for="ht in healthProdTypes"
-        :key="ht.imgName"
-        :ht="ht"
-      ></health-prod-types>
+      <syrup-powder
+        v-for="sDrink in syrupsPowders"
+        :key="sDrink.imgName"
+        :sDrink="sDrink"
+      ></syrup-powder>
     </div>
   </div>
 </template>
 
 <script>
-import AdsOnTop from "../components/AdsOnTop.vue";
-import HealthProdTypes from "../UI/HealthProdTypes.vue";
-
 import { mapGetters } from "vuex";
+
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import SyrupPowder from "../../UI/everyProduct/SyrupPowder.vue";
 
 export default {
   components: {
     AdsOnTop,
-    HealthProdTypes,
+    SyrupPowder,
   },
   computed: {
-    ...mapGetters(["healthProdTypes"]),
+    ...mapGetters(["syrupsPowders"]),
   },
 };
 </script>
 
 <style scoped>
-.health-care {
+.syrups-powders {
   margin: 0 20px;
 }
 .headline {
@@ -52,8 +52,5 @@ hr {
   width: 500px;
   margin: 0 20px;
   font-weight: 300;
-}
-.all-types {
-  margin: 15px 0px;
 }
 </style>

@@ -2,7 +2,9 @@
   <div class="syrup-powder-ui">
     <div>
       <img
-        :src="require('../prodImages/syrupsPowders/' + sDrink.imgName + '.jpg')"
+        :src="
+          require('../../prodImages/syrupsPowders/' + sDrink.imgName + '.jpg')
+        "
         :alt="sDrink.imgName"
       />
       <h4 class="name">{{ sDrink.name }}</h4>

@@ -2,7 +2,7 @@
   <div class="cooking-types" @click="typeClick">
     <div>
       <img
-        :src="require('../assets/' + ct.imgName + '.jpg')"
+        :src="require('../../assets/' + ct.imgName + '.jpg')"
         alt="ct.imgName"
       />
       <h4 class="name">{{ ct.name }}</h4>

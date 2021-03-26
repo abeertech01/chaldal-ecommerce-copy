@@ -1,7 +1,7 @@
 <template>
   <div class="fruits-veg" @click="typeClick">
     <div>
-      <img :src="require('../assets/' + fv.imgName + '.jpg')" alt="" />
+      <img :src="require('../../assets/' + fv.imgName + '.jpg')" alt="" />
       <h4 class="name">{{ fv.name }}</h4>
     </div>
   </div>

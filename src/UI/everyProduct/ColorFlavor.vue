@@ -2,7 +2,7 @@
   <div class="color-flavor">
     <div>
       <img
-        :src="require('../prodImages/colorsFlavors/' + cf.imgName + '.jpg')"
+        :src="require('../../prodImages/colorsFlavors/' + cf.imgName + '.jpg')"
         :alt="cf.imgName"
       />
       <h4 class="name">{{ cf.name }}</h4>

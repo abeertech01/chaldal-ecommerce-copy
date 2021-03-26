@@ -1,40 +1,39 @@
 <template>
-  <div class="soft-drinks">
+  <div class="fruits">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Soft Drinks</h4>
+      <h4 class="name">Fresh Fruits</h4>
       <hr />
     </div>
     <div class="all-types">
-      <soft-drink
-        v-for="drink in softDrinks"
-        :key="drink.imgName"
-        :drink="drink"
-      ></soft-drink>
+      <fruit
+        v-for="fruit in fruits"
+        :key="fruit.imgName"
+        :fruit="fruit"
+      ></fruit>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-
-import AdsOnTop from "../components/AdsOnTop.vue";
-import SoftDrink from "../UI/SoftDrink.vue";
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import Fruit from "../../UI/everyProduct/Fruit.vue";
 
 export default {
   components: {
     AdsOnTop,
-    SoftDrink,
+    Fruit,
   },
   computed: {
-    ...mapGetters(["softDrinks"]),
+    ...mapGetters(["fruits"]),
   },
 };
 </script>
 
 <style scoped>
-.soft-drinks {
+.fruits {
   margin: 0 20px;
 }
 .headline {

@@ -1,40 +1,40 @@
 <template>
-  <div class="spices">
+  <div class="health-care">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Spices</h4>
+      <h4 class="name">Health Care</h4>
       <hr />
     </div>
     <div class="all-types">
-      <spice
-        v-for="spice in spices"
-        :key="spice.imgName"
-        :spice="spice"
-      ></spice>
+      <health-prod-types
+        v-for="ht in healthProdTypes"
+        :key="ht.imgName"
+        :ht="ht"
+      ></health-prod-types>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import HealthProdTypes from "../../UI/prodTypes/HealthProdTypes.vue";
 
-import AdsOnTop from "../components/AdsOnTop.vue";
-import Spice from "../UI/Spice.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     AdsOnTop,
-    Spice,
+    HealthProdTypes,
   },
   computed: {
-    ...mapGetters(["spices"]),
+    ...mapGetters(["healthProdTypes"]),
   },
 };
 </script>
 
 <style scoped>
-.spices {
+.health-care {
   margin: 0 20px;
 }
 .headline {
@@ -52,5 +52,8 @@ hr {
   width: 500px;
   margin: 0 20px;
   font-weight: 300;
+}
+.all-types {
+  margin: 15px 0px;
 }
 </style>

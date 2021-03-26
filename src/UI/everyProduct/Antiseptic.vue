@@ -2,7 +2,7 @@
   <div class="antiseptic">
     <div>
       <img
-        :src="require('../prodImages/antiseptics/' + anti.imgName + '.jpg')"
+        :src="require('../../prodImages/antiseptics/' + anti.imgName + '.jpg')"
         :alt="anti.imgName"
       />
       <h4 class="name">{{ anti.name }}</h4>

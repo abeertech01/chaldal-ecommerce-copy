@@ -1,39 +1,40 @@
 <template>
-  <div class="fruits">
+  <div class="colors-flavors">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Fresh Fruits</h4>
+      <h4 class="name">Colors and Flavors</h4>
       <hr />
     </div>
     <div class="all-types">
-      <fruit
-        v-for="fruit in fruits"
-        :key="fruit.imgName"
-        :fruit="fruit"
-      ></fruit>
+      <color-flavor
+        v-for="cf in colorsFlavors"
+        :key="cf.imgName"
+        :cf="cf"
+      ></color-flavor>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import AdsOnTop from "../components/AdsOnTop.vue";
-import Fruit from "../UI/Fruit.vue";
+
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import ColorFlavor from "../../UI/everyProduct/ColorFlavor.vue";
 
 export default {
   components: {
     AdsOnTop,
-    Fruit,
+    ColorFlavor,
   },
   computed: {
-    ...mapGetters(["fruits"]),
+    ...mapGetters(["colorsFlavors"]),
   },
 };
 </script>
 
 <style scoped>
-.fruits {
+.colors-flavors {
   margin: 0 20px;
 }
 .headline {

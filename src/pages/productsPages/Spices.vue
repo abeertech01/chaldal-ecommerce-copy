@@ -1,17 +1,17 @@
 <template>
-  <div class="antiseptics">
+  <div class="spices">
     <ads-on-top></ads-on-top>
     <div class="headline">
       <hr />
-      <h4 class="name">Antiseptics</h4>
+      <h4 class="name">Spices</h4>
       <hr />
     </div>
     <div class="all-types">
-      <antiseptic
-        v-for="anti in antiseptics"
-        :key="anti.imgName"
-        :anti="anti"
-      ></antiseptic>
+      <spice
+        v-for="spice in spices"
+        :key="spice.imgName"
+        :spice="spice"
+      ></spice>
     </div>
   </div>
 </template>
@@ -19,22 +19,22 @@
 <script>
 import { mapGetters } from "vuex";
 
-import AdsOnTop from "../components/AdsOnTop.vue";
-import Antiseptic from "../UI/Antiseptic.vue";
+import AdsOnTop from "../../components/AdsOnTop.vue";
+import Spice from "../../UI/everyProduct/Spice.vue";
 
 export default {
   components: {
     AdsOnTop,
-    Antiseptic,
+    Spice,
   },
   computed: {
-    ...mapGetters(["antiseptics"]),
+    ...mapGetters(["spices"]),
   },
 };
 </script>
 
 <style scoped>
-.antiseptics {
+.spices {
   margin: 0 20px;
 }
 .headline {

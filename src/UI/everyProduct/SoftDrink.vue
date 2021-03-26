@@ -2,7 +2,7 @@
   <div class="soft-drink">
     <div>
       <img
-        :src="require('../prodImages/softDrinks/' + drink.imgName + '.jpg')"
+        :src="require('../../prodImages/softDrinks/' + drink.imgName + '.jpg')"
         :alt="drink.imgName"
       />
       <h4 class="name">{{ drink.name }}</h4>

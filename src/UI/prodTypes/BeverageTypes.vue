@@ -2,7 +2,7 @@
   <div class="beverage-types" @click="typeClick">
     <div>
       <img
-        :src="require('../assets/' + bt.imgName + '.jpg')"
+        :src="require('../../assets/' + bt.imgName + '.jpg')"
         alt="bt.imgName"
       />
       <h4 class="name">{{ bt.name }}</h4>
