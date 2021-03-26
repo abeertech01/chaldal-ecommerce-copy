@@ -1,6 +1,7 @@
 <template>
   <div class="beverages">
     <ads-on-top></ads-on-top>
+    <nav-links></nav-links>
     <div class="headline">
       <hr />
       <h4 class="name">Beverages</h4>
@@ -18,6 +19,7 @@
 
 <script>
 import AdsOnTop from "../../components/AdsOnTop.vue";
+import NavLinks from "../../components/NavLinks.vue";
 import BeverageTypes from "../../UI/prodTypes/BeverageTypes.vue";
 
 import { mapGetters } from "vuex";
@@ -25,10 +27,22 @@ import { mapGetters } from "vuex";
 export default {
   components: {
     AdsOnTop,
+    NavLinks,
     BeverageTypes,
   },
   computed: {
     ...mapGetters(["beverageProdTypes"]),
+  },
+  methods: {
+    setPath() {
+      this.$store.dispatch("clearPaths");
+      this.$store.dispatch("clearUrls");
+      this.$store.dispatch("takePaths", ["Beverages"]);
+      this.$store.dispatch("takeUrls", ["beverages"]);
+    },
+  },
+  created() {
+    this.setPath();
   },
 };
 </script>

@@ -1,6 +1,7 @@
 <template>
   <div class="food-supple">
     <ads-on-top></ads-on-top>
+    <nav-links></nav-links>
     <div class="headline">
       <hr />
       <h4 class="name">Food Supplements</h4>
@@ -20,15 +21,28 @@
 import { mapGetters } from "vuex";
 
 import AdsOnTop from "../../components/AdsOnTop.vue";
+import NavLinks from "../../components/NavLinks.vue";
 import FoodSupplement from "../../UI/everyProduct/FoodSupplement.vue";
 
 export default {
   components: {
     AdsOnTop,
+    NavLinks,
     FoodSupplement,
   },
   computed: {
     ...mapGetters(["foodSupplements"]),
+  },
+  methods: {
+    setPath() {
+      this.$store.dispatch("clearPaths");
+      this.$store.dispatch("clearUrls");
+      this.$store.dispatch("takePaths", ["Health Care", "Food Supplements"]);
+      this.$store.dispatch("takeUrls", ["health-care", "food-supplements"]);
+    },
+  },
+  created() {
+    this.setPath();
   },
 };
 </script>

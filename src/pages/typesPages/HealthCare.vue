@@ -1,6 +1,7 @@
 <template>
   <div class="health-care">
     <ads-on-top></ads-on-top>
+    <nav-links></nav-links>
     <div class="headline">
       <hr />
       <h4 class="name">Health Care</h4>
@@ -18,6 +19,7 @@
 
 <script>
 import AdsOnTop from "../../components/AdsOnTop.vue";
+import NavLinks from "../../components/NavLinks.vue";
 import HealthProdTypes from "../../UI/prodTypes/HealthProdTypes.vue";
 
 import { mapGetters } from "vuex";
@@ -25,10 +27,22 @@ import { mapGetters } from "vuex";
 export default {
   components: {
     AdsOnTop,
+    NavLinks,
     HealthProdTypes,
   },
   computed: {
     ...mapGetters(["healthProdTypes"]),
+  },
+  methods: {
+    setPath() {
+      this.$store.dispatch("clearPaths");
+      this.$store.dispatch("clearUrls");
+      this.$store.dispatch("takePaths", ["Health Care"]);
+      this.$store.dispatch("takeUrls", ["health-care"]);
+    },
+  },
+  created() {
+    this.setPath();
   },
 };
 </script>

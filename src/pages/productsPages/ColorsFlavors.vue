@@ -1,6 +1,7 @@
 <template>
   <div class="colors-flavors">
     <ads-on-top></ads-on-top>
+    <nav-links></nav-links>
     <div class="headline">
       <hr />
       <h4 class="name">Colors and Flavors</h4>
@@ -20,15 +21,28 @@
 import { mapGetters } from "vuex";
 
 import AdsOnTop from "../../components/AdsOnTop.vue";
+import NavLinks from "../../components/NavLinks.vue";
 import ColorFlavor from "../../UI/everyProduct/ColorFlavor.vue";
 
 export default {
   components: {
     AdsOnTop,
+    NavLinks,
     ColorFlavor,
   },
   computed: {
     ...mapGetters(["colorsFlavors"]),
+  },
+  methods: {
+    setPath() {
+      this.$store.dispatch("clearPaths");
+      this.$store.dispatch("clearUrls");
+      this.$store.dispatch("takePaths", ["Cooking", "Colors & Flavors"]);
+      this.$store.dispatch("takeUrls", ["cooking", "colors-flavors"]);
+    },
+  },
+  created() {
+    this.setPath();
   },
 };
 </script>

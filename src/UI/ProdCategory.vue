@@ -16,7 +16,7 @@ export default {
   computed: {
     cateIcon() {
       if (this.iconIndex === 0) {
-        return "vegetables";
+        return "fruits-veg";
       } else if (this.iconIndex === 1) {
         return "cooking";
       } else if (this.iconIndex === 2) {

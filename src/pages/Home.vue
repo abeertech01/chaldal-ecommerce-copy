@@ -95,7 +95,7 @@ export default {
         "Beverages",
         "Health Products",
       ],
-      iconList: ["vegetables", "cooking", "beverage", "healthProducts"],
+      iconList: ["fruits-veg", "cooking", "beverage", "healthProducts"],
     };
   },
   computed: {

@@ -14,8 +14,10 @@ export default {
     typeClick() {
       if (this.fv.imgName === "fresh-fruits") {
         this.$router.push("/fruits");
+        // this.$store.dispatch("takePaths", "Fresh Fruits");
       } else {
         this.$router.push("/vegetables");
+        // this.$store.dispatch("takePaths", "Fresh Vegetables");
       }
     },
   },

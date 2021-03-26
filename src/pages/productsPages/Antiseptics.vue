@@ -1,6 +1,7 @@
 <template>
   <div class="antiseptics">
     <ads-on-top></ads-on-top>
+    <nav-links></nav-links>
     <div class="headline">
       <hr />
       <h4 class="name">Antiseptics</h4>
@@ -20,15 +21,28 @@
 import { mapGetters } from "vuex";
 
 import AdsOnTop from "../../components/AdsOnTop.vue";
+import NavLinks from "../../components/NavLinks.vue";
 import Antiseptic from "../../UI/everyProduct/Antiseptic.vue";
 
 export default {
   components: {
     AdsOnTop,
+    NavLinks,
     Antiseptic,
   },
   computed: {
     ...mapGetters(["antiseptics"]),
+  },
+  methods: {
+    setPath() {
+      this.$store.dispatch("clearPaths");
+      this.$store.dispatch("clearUrls");
+      this.$store.dispatch("takePaths", ["Health Care", "Antiseptics"]);
+      this.$store.dispatch("takeUrls", ["health-care", "antiseptics"]);
+    },
+  },
+  created() {
+    this.setPath();
   },
 };
 </script>
