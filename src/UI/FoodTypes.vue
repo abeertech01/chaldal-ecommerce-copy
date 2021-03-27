@@ -1,5 +1,5 @@
 <template>
-  <div class="food-types">
+  <div class="food-types" @click="typeClick">
     <div>
       <img :src="require('../assets/' + food.imgName + '.jpg')" alt="" />
       <h4 class="name">{{ food.name }}</h4>
@@ -10,6 +10,17 @@
 <script>
 export default {
   props: ["food"],
+  methods: {
+    typeClick() {
+      if (this.food.imgName === "fruits-veg-food") {
+        this.$router.push("/fruits-vegetables");
+      } else if (this.food.imgName === "cooking-food") {
+        this.$router.push("/cooking");
+      } else {
+        this.$router.push("/beverages");
+      }
+    },
+  },
 };
 </script>
 
@@ -17,6 +28,8 @@ export default {
 .food-types {
   display: inline-block;
   text-align: center;
+  margin-right: 20px;
+  cursor: pointer;
 }
 .food-types img {
   width: 280px;
