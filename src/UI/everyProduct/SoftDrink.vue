@@ -1,14 +1,19 @@
 <template>
   <div class="soft-drink">
-    <img
-      :src="require('../../prodImages/softDrinks/' + drink.imgName + '.jpg')"
-      :alt="drink.imgName"
-    />
-    <h4 class="name">{{ drink.name }}</h4>
-    <p>{{ drink.quantity }}</p>
-    <p>
-      <span class="price text-danger">{{ drink.price }}</span>
-    </p>
+    <div class="prod-img d-flex align-items-center">
+      <img
+        :src="require('../../prodImages/softDrinks/' + drink.imgName + '.jpg')"
+        :alt="drink.imgName"
+      />
+    </div>
+
+    <div class="prod-info">
+      <div class="name">{{ drink.name }}</div>
+      <div class="info">
+        <p class="quantity">{{ drink.quantity }}</p>
+        <p class="price text-danger">{{ drink.price }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,16 +26,31 @@ export default {
 <style scoped>
 .soft-drink {
   display: inline-block;
+  width: 200px;
   text-align: center;
   margin-right: 20px;
+  /* background-color: rgb(216, 216, 216); */
+}
+.prod-img {
+  width: 180px;
+  height: 220px;
+  margin: 0 auto;
+  /* background-color: rgb(255, 236, 172); */
 }
 .soft-drink img {
-  width: 200px;
+  width: 100%;
 }
-.soft-drink h4 {
-  font-weight: 300;
+.prod-info {
+  height: 150px;
+  display: grid;
+  align-content: space-between;
 }
-.soft-drink .price {
+.prod-info .name {
+  font-size: 17px;
+  height: 100%;
+}
+.prod-info .info .price {
+  color: rgb(255, 61, 61);
   font-size: 18px;
   font-weight: 600;
 }
