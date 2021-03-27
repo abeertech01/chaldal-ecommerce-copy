@@ -1,7 +1,6 @@
 <template>
   <div class="health-care">
     <ads-on-top></ads-on-top>
-    <nav-links></nav-links>
     <div class="headline">
       <hr />
       <h4 class="name">Health Care</h4>
@@ -19,7 +18,6 @@
 
 <script>
 import AdsOnTop from "../../components/AdsOnTop.vue";
-import NavLinks from "../../components/NavLinks.vue";
 import HealthProdTypes from "../../UI/prodTypes/HealthProdTypes.vue";
 
 import { mapGetters } from "vuex";
@@ -27,7 +25,6 @@ import { mapGetters } from "vuex";
 export default {
   components: {
     AdsOnTop,
-    NavLinks,
     HealthProdTypes,
   },
   computed: {
