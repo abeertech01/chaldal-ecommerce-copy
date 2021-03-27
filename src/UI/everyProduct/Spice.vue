@@ -1,16 +1,14 @@
 <template>
   <div class="spice">
-    <div>
-      <img
-        :src="require('../../prodImages/spices/' + spice.imgName + '.jpg')"
-        :alt="spice.imgName"
-      />
-      <h4 class="name">{{ spice.name }}</h4>
-      <p>{{ spice.quantity }}</p>
-      <p>
-        <span class="price text-danger">{{ spice.price }}</span>
-      </p>
-    </div>
+    <img
+      :src="require('../../prodImages/spices/' + spice.imgName + '.jpg')"
+      :alt="spice.imgName"
+    />
+    <h4 class="name">{{ spice.name }}</h4>
+    <p>{{ spice.quantity }}</p>
+    <p>
+      <span class="price text-danger">{{ spice.price }}</span>
+    </p>
   </div>
 </template>
 

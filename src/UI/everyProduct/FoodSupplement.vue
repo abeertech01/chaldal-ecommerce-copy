@@ -1,18 +1,16 @@
 <template>
   <div class="food-supplement">
-    <div>
-      <img
-        :src="
-          require('../../prodImages/supplements/' + foodSupple.imgName + '.jpg')
-        "
-        :alt="foodSupple.imgName"
-      />
-      <h4 class="name">{{ foodSupple.name }}</h4>
-      <p>{{ foodSupple.quantity }}</p>
-      <p>
-        <span class="price text-danger">{{ foodSupple.price }}</span>
-      </p>
-    </div>
+    <img
+      :src="
+        require('../../prodImages/supplements/' + foodSupple.imgName + '.jpg')
+      "
+      :alt="foodSupple.imgName"
+    />
+    <h4 class="name">{{ foodSupple.name }}</h4>
+    <p>{{ foodSupple.quantity }}</p>
+    <p>
+      <span class="price text-danger">{{ foodSupple.price }}</span>
+    </p>
   </div>
 </template>
 

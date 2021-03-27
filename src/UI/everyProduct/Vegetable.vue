@@ -1,21 +1,19 @@
 <template>
   <div class="vegetable">
-    <div>
-      <img
-        :src="
-          require('../../prodImages/vegetables/' + vegetable.imgName + '.jpg')
-        "
-        alt="vegetable.imgName"
-      />
-      <h4 class="name">{{ vegetable.name }}</h4>
-      <p>{{ vegetable.quantity }}</p>
-      <p>
-        <span class="price text-danger">{{ vegetable.price }}</span>
-        <small
-          ><del> {{ vegetable.oldPrice }}</del></small
-        >
-      </p>
-    </div>
+    <img
+      :src="
+        require('../../prodImages/vegetables/' + vegetable.imgName + '.jpg')
+      "
+      alt="vegetable.imgName"
+    />
+    <h4 class="name">{{ vegetable.name }}</h4>
+    <p>{{ vegetable.quantity }}</p>
+    <p>
+      <span class="price text-danger">{{ vegetable.price }}</span>
+      <small
+        ><del> {{ vegetable.oldPrice }}</del></small
+      >
+    </p>
   </div>
 </template>
 

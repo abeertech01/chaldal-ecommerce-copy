@@ -1,16 +1,14 @@
 <template>
   <div class="antiseptic">
-    <div>
-      <img
-        :src="require('../../prodImages/antiseptics/' + anti.imgName + '.jpg')"
-        :alt="anti.imgName"
-      />
-      <h4 class="name">{{ anti.name }}</h4>
-      <p>{{ anti.quantity }}</p>
-      <p>
-        <span class="price text-danger">{{ anti.price }}</span>
-      </p>
-    </div>
+    <img
+      :src="require('../../prodImages/antiseptics/' + anti.imgName + '.jpg')"
+      :alt="anti.imgName"
+    />
+    <h4 class="name">{{ anti.name }}</h4>
+    <p>{{ anti.quantity }}</p>
+    <p>
+      <span class="price text-danger">{{ anti.price }}</span>
+    </p>
   </div>
 </template>
 

@@ -1,16 +1,14 @@
 <template>
   <div class="color-flavor">
-    <div>
-      <img
-        :src="require('../../prodImages/colorsFlavors/' + cf.imgName + '.jpg')"
-        :alt="cf.imgName"
-      />
-      <h4 class="name">{{ cf.name }}</h4>
-      <p>{{ cf.quantity }}</p>
-      <p>
-        <span class="price text-danger">{{ cf.price }}</span>
-      </p>
-    </div>
+    <img
+      :src="require('../../prodImages/colorsFlavors/' + cf.imgName + '.jpg')"
+      :alt="cf.imgName"
+    />
+    <h4 class="name">{{ cf.name }}</h4>
+    <p>{{ cf.quantity }}</p>
+    <p>
+      <span class="price text-danger">{{ cf.price }}</span>
+    </p>
   </div>
 </template>
 

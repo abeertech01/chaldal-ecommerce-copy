@@ -1,19 +1,17 @@
 <template>
   <div class="fruit">
-    <div>
-      <img
-        :src="require('../../prodImages/fruits/' + fruit.imgName + '.jpg')"
-        alt="fruit.imgName"
-      />
-      <h4 class="name">{{ fruit.name }}</h4>
-      <p>{{ fruit.quantity }}</p>
-      <p>
-        <span class="price text-danger">{{ fruit.price }}</span>
-        <small
-          ><del> {{ fruit.oldPrice }}</del></small
-        >
-      </p>
-    </div>
+    <img
+      :src="require('../../prodImages/fruits/' + fruit.imgName + '.jpg')"
+      alt="fruit.imgName"
+    />
+    <h4 class="name">{{ fruit.name }}</h4>
+    <p>{{ fruit.quantity }}</p>
+    <p>
+      <span class="price text-danger">{{ fruit.price }}</span>
+      <small
+        ><del> {{ fruit.oldPrice }}</del></small
+      >
+    </p>
   </div>
 </template>
 

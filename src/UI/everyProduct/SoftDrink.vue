@@ -1,16 +1,14 @@
 <template>
   <div class="soft-drink">
-    <div>
-      <img
-        :src="require('../../prodImages/softDrinks/' + drink.imgName + '.jpg')"
-        :alt="drink.imgName"
-      />
-      <h4 class="name">{{ drink.name }}</h4>
-      <p>{{ drink.quantity }}</p>
-      <p>
-        <span class="price text-danger">{{ drink.price }}</span>
-      </p>
-    </div>
+    <img
+      :src="require('../../prodImages/softDrinks/' + drink.imgName + '.jpg')"
+      :alt="drink.imgName"
+    />
+    <h4 class="name">{{ drink.name }}</h4>
+    <p>{{ drink.quantity }}</p>
+    <p>
+      <span class="price text-danger">{{ drink.price }}</span>
+    </p>
   </div>
 </template>
 

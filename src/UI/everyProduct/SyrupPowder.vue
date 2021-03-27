@@ -1,18 +1,16 @@
 <template>
   <div class="syrup-powder-ui">
-    <div>
-      <img
-        :src="
-          require('../../prodImages/syrupsPowders/' + sDrink.imgName + '.jpg')
-        "
-        :alt="sDrink.imgName"
-      />
-      <h4 class="name">{{ sDrink.name }}</h4>
-      <p>{{ sDrink.quantity }}</p>
-      <p>
-        <span class="price text-danger">{{ sDrink.price }}</span>
-      </p>
-    </div>
+    <img
+      :src="
+        require('../../prodImages/syrupsPowders/' + sDrink.imgName + '.jpg')
+      "
+      :alt="sDrink.imgName"
+    />
+    <h4 class="name">{{ sDrink.name }}</h4>
+    <p>{{ sDrink.quantity }}</p>
+    <p>
+      <span class="price text-danger">{{ sDrink.price }}</span>
+    </p>
   </div>
 </template>
 
