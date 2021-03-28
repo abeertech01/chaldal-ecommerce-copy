@@ -14,11 +14,18 @@
         <p class="price text-danger">{{ spice.price }}</p>
       </div>
     </div>
+
+    <add-button></add-button>
   </div>
 </template>
 
 <script>
+import AddButton from "../AddButton.vue";
+
 export default {
+  components: {
+    AddButton,
+  },
   props: ["spice"],
 };
 </script>
