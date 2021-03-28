@@ -14,18 +14,11 @@
         <p class="price text-danger">{{ cf.price }}</p>
       </div>
     </div>
-
-    <add-button></add-button>
   </div>
 </template>
 
 <script>
-import AddButton from "../AddButton.vue";
-
 export default {
-  components: {
-    AddButton,
-  },
   props: ["cf"],
 };
 </script>
