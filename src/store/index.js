@@ -21,6 +21,7 @@ export default new Vuex.Store({
     bag: [],
     itemSet: [],
     itemNum: 0,
+    totalPrice: 0,
     foodTypes: [
       {
         imgName: 'fruits-veg-food',
@@ -57,8 +58,19 @@ export default new Vuex.Store({
     },
     ADD_TO_BAG(state, payload) {
       state.bag.push(payload);
+      let price = parseInt(state.bag[state.bag.length - 1].price);
+      state.totalPrice += price;
       state.itemSet = [...new Set(state.bag)]
       state.itemNum = state.itemSet.length;
+
+      console.log('after adding = ' + state.totalPrice);
+    },
+    REMOVE_FROM_BAG(state) {
+      let price = parseInt(state.bag[state.bag.length - 1].price);
+      state.totalPrice -= price;
+      state.bag.pop();
+
+      console.log('after subtracting = ' + state.totalPrice);
     }
   },
   actions: {
@@ -76,11 +88,17 @@ export default new Vuex.Store({
     },
     addToBag(context, payload) {
       context.commit('ADD_TO_BAG', payload);
+    },
+    removeFromBag(context) {
+      context.commit('REMOVE_FROM_BAG');
     }
   },
   getters: {
     foodTypes(state) {
       return state.foodTypes;
+    },
+    bag(state) {
+      return state.bag;
     },
     paths(state) {
       return state.paths;

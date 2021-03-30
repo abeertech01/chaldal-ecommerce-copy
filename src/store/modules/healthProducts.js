@@ -64,14 +64,14 @@ export default {
       {
         imgName: 'savlon-liquid',
         name: 'Savlon Antiseptic Liquid',
-        quantity: '300 ml',
-        price: '350 BDT.',
+        quantity: '112 ml',
+        price: '44 BDT.',
       },
       {
         imgName: 'savlon-spray',
         name: 'Savlon Disinfectant Spray',
-        quantity: '1.25 ltr',
-        price: '65 BDT.',
+        quantity: '300 ml',
+        price: '350 BDT.',
       },
     ],
   },
