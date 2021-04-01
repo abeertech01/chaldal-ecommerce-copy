@@ -19,6 +19,7 @@ export default new Vuex.Store({
   },
   state: {
     bag: [],
+    isBagOpen: false,
     itemSet: [],
     itemNum: 0,
     totalPrice: 0,
@@ -71,6 +72,12 @@ export default new Vuex.Store({
       state.bag.pop();
 
       console.log('after subtracting = ' + state.totalPrice);
+    },
+    openBag(state) {
+      state.isBagOpen = true;
+    },
+    closeBag(state) {
+      state.isBagOpen = false;
     }
   },
   actions: {
@@ -99,6 +106,9 @@ export default new Vuex.Store({
     },
     bag(state) {
       return state.bag;
+    },
+    isBagOpen(state) {
+      return state.isBagOpen;
     },
     totalPrice(state) {
       return state.totalPrice;

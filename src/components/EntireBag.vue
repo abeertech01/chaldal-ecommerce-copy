@@ -4,7 +4,7 @@
       <p class="d-inline">
         <i class="fas fa-shopping-bag"></i> {{ itemNum }} ITEMS
       </p>
-      <button class="float-right">Close</button>
+      <button @click="closeEntireBag" class="float-right">Close</button>
     </section>
     <section
       :class="{ green: discountPrice, grey: !discountPrice }"
@@ -71,6 +71,9 @@ export default {
   methods: {
     codeClick() {
       this.sCode = !this.sCode;
+    },
+    closeEntireBag() {
+      this.$store.commit("closeBag");
     },
   },
 };

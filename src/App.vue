@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <head-vue class="head-app"></head-vue>
+    <head-vue :class="{ 'head-app': isBagOpen }"></head-vue>
     <short-bag-info class="short-bag-app"></short-bag-info>
-    <div class="main-page-app">
-      <router-view class="mother-router-app"></router-view>
-      <entire-bag class="entire-bag-app"></entire-bag>
+    <div :class="{ 'main-page-app': isBagOpen }">
+      <router-view :class="{ 'mother-router-app': isBagOpen }"></router-view>
+      <entire-bag v-if="isBagOpen" class="entire-bag-app"></entire-bag>
     </div>
   </div>
 </template>
@@ -14,12 +14,17 @@ import Head from "./components/Head.vue";
 import ShortBagInfo from "./components/ShortBagInfo.vue";
 import EntireBag from "./components/EntireBag.vue";
 
+import { mapGetters } from "vuex";
+
 export default {
   name: "App",
   components: {
     HeadVue: Head,
     ShortBagInfo,
     EntireBag,
+  },
+  computed: {
+    ...mapGetters(["isBagOpen"]),
   },
 };
 </script>

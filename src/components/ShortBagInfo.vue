@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="short-info">
+    <div class="short-info" @click="openEntireBag">
       <div class="item-num text-center">
         <div class="icon">
           <i class="fas fa-shopping-bag"></i>
         </div>
-        <div class="num">{{ number }} ITEMS</div>
+        <div class="num">{{ itemNum }} ITEMS</div>
       </div>
       <div class="total-price text-center">
         {{ totalPrice }} <small>Tk</small>
@@ -24,7 +24,12 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["totalPrice"]),
+    ...mapGetters(["totalPrice", "itemNum"]),
+  },
+  methods: {
+    openEntireBag() {
+      this.$store.commit("openBag");
+    },
   },
 };
 </script>
@@ -35,6 +40,7 @@ export default {
   height: 75px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  cursor: pointer;
 }
 .item-num {
   background: rgb(119, 119, 119);
