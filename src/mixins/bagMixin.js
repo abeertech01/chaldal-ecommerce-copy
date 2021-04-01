@@ -4,27 +4,28 @@ export default {
   data() {
     return {
       inBag: false,
-      prodNum: 0,
+      numOfProd: 0
     };
   },
   computed: {
-    ...mapGetters(["bag"]),
+    ...mapGetters(["itemSet"])
   },
   methods: {
     addClick() {
       this.inBag = true;
-      this.prodNum += 1;
+      this.numOfProd += 1;
       this.$store.dispatch("addToBag", this.product);
     },
     addProd() {
-      this.prodNum += 1;
+      this.numOfProd += 1;
       this.$store.dispatch("addToBag", this.product);
     },
     subtractProd() {
-      if (this.bag.length && this.bag[this.bag.length - 1].name === this.product.name) {
-        this.prodNum -= 1;
-        this.$store.dispatch("removeFromBag");
+      this.numOfProd -= 1;
+      if (this.numOfProd === 0) {
+        this.inBag = false;
       }
+      this.$store.dispatch("removeFromBag", this.product.imgName);
     },
   },
 }

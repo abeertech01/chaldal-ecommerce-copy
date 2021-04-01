@@ -21,25 +21,25 @@ export default {
         imgName: 'ensure-diabetes',
         name: 'Ensure Diabetes Care Adult Health Drink',
         quantity: '400 gm',
-        price: '940 BDT.',
+        price: '940 BDT.'
       },
       {
         imgName: 'ensure-vanilla',
         name: 'Ensure Nutrition Vanilla Flavor Powder Jar',
         quantity: '400 gm',
-        price: '732 BDT.',
+        price: '732 BDT.'
       },
       {
         imgName: 'horlicks',
         name: 'Horlicks Standard Jar',
         quantity: '500 gm',
-        price: '350 BDT.',
+        price: '350 BDT.'
       },
       {
         imgName: 'pediasure-vanilla',
         name: 'PediaSure Vanilla Delight',
         quantity: '400 gm',
-        price: '689 BDT.',
+        price: '689 BDT.'
       },
     ],
     antiseptics: [
@@ -53,25 +53,25 @@ export default {
         imgName: 'dettol-spray',
         name: 'Dettol Disinfectant Spray',
         quantity: '225 ml',
-        price: '350 BDT.',
+        price: '350 BDT.'
       },
       {
         imgName: 'hexisol',
         name: 'Hexisol Hand Rub',
         quantity: '250 ml',
-        price: '130 BDT.',
+        price: '130 BDT.'
       },
       {
         imgName: 'savlon-liquid',
         name: 'Savlon Antiseptic Liquid',
         quantity: '112 ml',
-        price: '44 BDT.',
+        price: '44 BDT.'
       },
       {
         imgName: 'savlon-spray',
         name: 'Savlon Disinfectant Spray',
         quantity: '300 ml',
-        price: '350 BDT.',
+        price: '350 BDT.'
       },
     ],
   },

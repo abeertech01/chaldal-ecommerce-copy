@@ -18,7 +18,7 @@ export default new Vuex.Store({
     healthProducts
   },
   state: {
-    bag: [],
+    bag: [], //change    
     isBagOpen: false,
     itemSet: [],
     itemNum: 0,
@@ -57,19 +57,45 @@ export default new Vuex.Store({
     CLEAR_URLS(state) {
       state.urls = [];
     },
-    ADD_TO_BAG(state, payload) {
-      state.bag.push(payload);
-      let price = parseInt(state.bag[state.bag.length - 1].price);
-      state.totalPrice += price;
-      state.itemSet = [...new Set(state.bag)]
-      state.itemNum = state.itemSet.length;
+    ADD_TO_BAG(state, payload) {//change
+      let record = state.itemSet.find(el => el.imgName === payload.imgName);
+      let price = parseInt(payload.price);
 
-      console.log('after adding = ' + state.totalPrice);
+      if (record) {
+        let recordIndex = state.itemSet.indexOf(record);
+        let product = state.itemSet[recordIndex];
+
+        product.prodNum++;
+        state.totalPrice += price;
+      } else {
+        payload.prodNum++;
+        state.itemSet.push(payload);
+        state.itemNum++;
+        state.totalPrice += price;
+      }
     },
-    REMOVE_FROM_BAG(state) {
-      let price = parseInt(state.bag[state.bag.length - 1].price);
-      state.totalPrice -= price;
-      state.bag.pop();
+    REMOVE_FROM_BAG(state, payload) {//change
+      let record = state.itemSet.find(el => el.imgName === payload);
+      let recordIndex;
+      let product;
+      let price;
+
+      if (record) {
+        recordIndex = state.itemSet.indexOf(record);
+        product = state.itemSet[recordIndex];
+        price = parseInt(product.price);
+      }
+
+      if (record) {
+        if (record.prodNum > 1) {
+          product.prodNum--;
+          state.totalPrice -= price;
+        } else if (record.prodNum === 1) {
+          state.itemSet.splice(recordIndex, 1);
+          state.itemNum--;
+          state.totalPrice -= price;
+        }
+      }
 
       console.log('after subtracting = ' + state.totalPrice);
     },
@@ -96,15 +122,15 @@ export default new Vuex.Store({
     addToBag(context, payload) {
       context.commit('ADD_TO_BAG', payload);
     },
-    removeFromBag(context) {
-      context.commit('REMOVE_FROM_BAG');
+    removeFromBag(context, payload) {
+      context.commit('REMOVE_FROM_BAG', payload);
     }
   },
   getters: {
     foodTypes(state) {
       return state.foodTypes;
     },
-    bag(state) {
+    bag(state) {//change
       return state.bag;
     },
     isBagOpen(state) {

@@ -26,7 +26,7 @@
     </button>
     <div class="bag counting d-flex justify-content-between" v-if="inBag">
       <button class="minus" @click="subtractProd">-</button>
-      <button class="writing" @click="addProd">{{ prodNum }} in bag</button>
+      <button class="writing" @click="addProd">{{ numOfProd }} in bag</button>
       <button class="plus" @click="addProd">+</button>
     </div>
   </div>
@@ -44,6 +44,7 @@ export default {
         imgName: this.fruit.imgName,
         name: this.fruit.name,
         price: this.fruit.price,
+        prodNum: 0,
       },
     };
   },
