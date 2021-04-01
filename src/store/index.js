@@ -100,6 +100,12 @@ export default new Vuex.Store({
     bag(state) {
       return state.bag;
     },
+    totalPrice(state) {
+      return state.totalPrice;
+    },
+    itemNum(state) {
+      return state.itemNum;
+    },
     paths(state) {
       return state.paths;
     },

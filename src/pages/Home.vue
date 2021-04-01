@@ -255,8 +255,8 @@ export default {
 }
 .search-box input {
   width: 150%;
-  position: relative;
-  left: -25%;
+  /* position: relative; */
+  margin-left: -25%;
   height: 40px;
   padding: 2px 10px;
   border: 1px solid rgb(172, 172, 172);
