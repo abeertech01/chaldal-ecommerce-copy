@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center">
-    <div class="ads">
+    <div :class="{ 'get-down': isBagOpen }" class="ads">
       <div class="ad1"></div>
       <div class="ad2"></div>
     </div>
@@ -8,13 +8,22 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["isBagOpen"]),
+  },
+};
 </script>
 
 <style scoped>
 .ads {
   width: 74%;
   margin-bottom: 20px;
+}
+.get-down {
+  margin-top: 55px;
 }
 .ad1 {
   display: inline-block;
