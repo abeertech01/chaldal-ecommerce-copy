@@ -113,6 +113,9 @@ export default new Vuex.Store({
     totalPrice(state) {
       return state.totalPrice;
     },
+    itemSet(state) {
+      return state.itemSet;
+    },
     itemNum(state) {
       return state.itemNum;
     },

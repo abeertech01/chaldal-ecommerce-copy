@@ -19,12 +19,14 @@
       </p>
     </section>
     <section class="bag-details">
-      <div class="bag-empty">
+      <div v-if="itemNum === 0" class="bag-empty">
         <div class="bag-pic">
           <img src="../assets/bag.png" alt="bag" />
         </div>
         <p class="text-center">Your shopping bag is empty. Start shopping</p>
       </div>
+
+      <bag-item></bag-item>
     </section>
     <section class="contact-code text-center">
       <div class="special-code">
@@ -50,16 +52,20 @@
 </template>
 
 <script>
+import BagItem from "../UI/BagItem.vue";
 import { mapGetters } from "vuex";
 
 export default {
+  components: {
+    BagItem,
+  },
   data() {
     return {
       sCode: false,
     };
   },
   computed: {
-    ...mapGetters(["totalPrice", "itemNum"]),
+    ...mapGetters(["totalPrice", "itemNum", "itemSet"]),
     discountPrice() {
       if (this.totalPrice >= 400) {
         return true;
