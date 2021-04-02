@@ -13,7 +13,7 @@
       <div class="info">
         <div class="prod-name">
           Lorem ipsum dolor sit amet.<br /><small
-            ><strong>36tk/150gm</strong></small
+            ><strong>&#2547; 36 / 150gm</strong></small
           >
         </div>
       </div>

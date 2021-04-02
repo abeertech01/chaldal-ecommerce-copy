@@ -47,6 +47,10 @@
       <div class="contact">
         <p>Phone: 0121-2222222</p>
       </div>
+      <div class="place-order">
+        <button class="order-btn">Place Order</button>
+        <div class="total-price">&#2547; {{ totalPrice }}</div>
+      </div>
     </section>
   </div>
 </template>
@@ -186,5 +190,27 @@ export default {
   font-size: 18px;
   margin-top: 10px;
   color: rgb(150, 150, 150);
+}
+.place-order {
+  margin: 10px 20px;
+}
+.place-order .order-btn {
+  width: 60%;
+  background: #ff686e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px 0 0 4px;
+  font-size: 18px;
+}
+.place-order .total-price {
+  width: 40%;
+  display: inline-block;
+  background: #cc565a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 0 4px 4px 0;
+  font-size: 18px;
 }
 </style>
