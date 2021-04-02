@@ -26,7 +26,7 @@
         <p class="text-center">Your shopping bag is empty. Start shopping</p>
       </div>
 
-      <bag-item></bag-item>
+      <bag-item class="w-100" v-else></bag-item>
     </section>
     <section class="contact-code text-center">
       <div class="special-code">
