@@ -72,6 +72,7 @@ export default new Vuex.Store({
         state.itemSet.push(payload);
         state.itemNum++;
         state.totalPrice += price;
+        state.isBagOpen = true;
       }
     },
     REMOVE_FROM_BAG(state, payload) {//change
