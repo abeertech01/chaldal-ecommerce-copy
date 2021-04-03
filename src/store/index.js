@@ -74,6 +74,8 @@ export default new Vuex.Store({
         state.totalPrice += price;
         state.isBagOpen = true;
       }
+
+      console.log(state.itemSet);
     },
     REMOVE_FROM_BAG(state, payload) {//change
       let record = state.itemSet.find(el => el.imgName === payload);
@@ -85,20 +87,58 @@ export default new Vuex.Store({
         recordIndex = state.itemSet.indexOf(record);
         product = state.itemSet[recordIndex];
         price = parseInt(product.price);
-      }
 
-      if (record) {
-        if (record.prodNum > 1) {
+        if (product.prodNum > 1) {
           product.prodNum--;
           state.totalPrice -= price;
-        } else if (record.prodNum === 1) {
+        } else if (product.prodNum === 1) {
+          product.prodNum = 0;
           state.itemSet.splice(recordIndex, 1);
           state.itemNum--;
           state.totalPrice -= price;
+          state.inBag = false;
         }
       }
+    },
+    incProdNum(state, payload) {
+      let record = state.itemSet.find(el => el.imgName === payload);
+      let recordIndex = state.itemSet.indexOf(record);
+      let product = state.itemSet[recordIndex];
+      let price = parseInt(product.price);
 
-      console.log('after subtracting = ' + state.totalPrice);
+      if (record) {
+        product.prodNum++;
+        state.totalPrice += price;
+      }
+    },
+    decProdNum(state, payload) {
+      let record = state.itemSet.find(el => el.imgName === payload);
+      let recordIndex;
+      let product;
+      let price;
+
+      if (record) {
+        recordIndex = state.itemSet.indexOf(record);
+        product = state.itemSet[recordIndex];
+        price = parseInt(product.price);
+
+        if (record.prodNum > 1) {
+          product.prodNum--;
+          state.totalPrice -= price;
+        }
+      }
+    },
+    removeProd(state, payload) {
+      let record = state.itemSet.find(el => el.imgName === payload);
+      let recordIndex = state.itemSet.indexOf(record);
+      let product = state.itemSet[recordIndex];
+      let price = parseInt(product.price);
+
+      if (record) {
+        state.totalPrice -= (product.prodNum * price);
+        product.prodNum = 0;
+        state.itemSet.splice(recordIndex, 1);
+      }
     },
     openBag(state) {
       state.isBagOpen = true;
@@ -137,6 +177,9 @@ export default new Vuex.Store({
     isBagOpen(state) {
       return state.isBagOpen;
     },
+    // inBag(state) {
+    //   return state.inBag;
+    // },
     totalPrice(state) {
       return state.totalPrice;
     },

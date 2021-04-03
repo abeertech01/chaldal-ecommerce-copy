@@ -4,27 +4,37 @@ export default {
   data() {
     return {
       inBag: false,
-      numOfProd: 0
     };
   },
   computed: {
-    ...mapGetters(["itemSet"])
+    ...mapGetters(["itemSet"]),
+    numOfProd() {
+      let record = this.itemSet.find(el => el.imgName === this.product.imgName);
+      let product;
+
+      if (record) {
+        product = this.itemSet[this.itemSet.indexOf(record)];
+
+        return product.prodNum;
+      } else {
+        return 0;
+      }
+    }
+  },
+  watch: {
+    numOfProd() {
+      if (this.numOfProd === 1) {
+        this.inBag = true;
+      } else if (this.numOfProd === 0) {
+        this.inBag = false;
+      }
+    }
   },
   methods: {
-    addClick() {
-      this.inBag = true;
-      this.numOfProd += 1;
-      this.$store.dispatch("addToBag", this.product);
-    },
     addProd() {
-      this.numOfProd += 1;
       this.$store.dispatch("addToBag", this.product);
     },
     subtractProd() {
-      this.numOfProd -= 1;
-      if (this.numOfProd === 0) {
-        this.inBag = false;
-      }
       this.$store.dispatch("removeFromBag", this.product.imgName);
     },
   },

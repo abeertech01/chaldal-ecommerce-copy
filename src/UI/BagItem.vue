@@ -1,32 +1,66 @@
 <template>
   <div class="bag-items">
     <div class="quantity">
-      <button class="increase"><i class="fas fa-chevron-up"></i></button>
-      <button class="num">0</button>
-      <button class="decrease"><i class="fas fa-chevron-down"></i></button>
+      <button class="increase" @click="incQuan">
+        <i class="fas fa-chevron-up"></i>
+      </button>
+      <button class="num" @click="incQuan">{{ item.prodNum }}</button>
+      <button class="decrease" @click="decQuan">
+        <i class="fas fa-chevron-down"></i>
+      </button>
     </div>
 
     <div class="product-info">
       <div class="prod-img">
-        <img src="../assets/logo.png" alt="" />
+        <img
+          :src="
+            require('../prodImages/' + item.group + '/' + item.imgName + '.jpg')
+          "
+          :alt="item.imgName"
+        />
       </div>
       <div class="info">
         <div class="prod-name">
-          Lorem ipsum dolor sit amet.<br /><small
-            ><strong>&#2547; 36 / 150gm</strong></small
+          {{ item.name }}<br /><small
+            ><strong>&#2547; {{ price }} / {{ item.quantity }}</strong></small
           >
         </div>
       </div>
     </div>
 
-    <div class="price">50tk</div>
+    <div class="price">&#2547; {{ price * item.prodNum }}</div>
 
-    <button class="remove-btn"><i class="fas fa-times"></i></button>
+    <button class="remove-btn" @click="removeItem">
+      <i class="fas fa-times"></i>
+    </button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["item"],
+  computed: {
+    price() {
+      let prodPrice = parseInt(this.item.price);
+      return prodPrice;
+    },
+  },
+  methods: {
+    incQuan() {
+      this.$store.commit("incProdNum", this.item.imgName);
+    },
+    decQuan() {
+      if (this.item.prodNum > 1) {
+        this.$store.commit("decProdNum", this.item.imgName);
+      } else {
+        this.$store.commit("removeProd", this.item.imgName);
+      }
+    },
+    removeItem() {
+      this.$store.commit("removeProd", this.item.imgName);
+    },
+  },
+};
 </script>
 
 <style scoped>

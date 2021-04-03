@@ -23,7 +23,7 @@
     </div>
 
     <!-- Adding to shopping bag -->
-    <button class="bag adding" v-if="!inBag" @click="addClick">
+    <button class="bag adding" v-if="!inBag" @click="addProd">
       <i class="fas fa-shopping-bag"></i> Add to bag
     </button>
     <div class="bag counting d-flex justify-content-between" v-if="inBag">
@@ -45,8 +45,10 @@ export default {
       product: {
         imgName: this.vegetable.imgName,
         name: this.vegetable.name,
+        quantity: this.vegetable.quantity,
         price: this.vegetable.price,
         prodNum: 0,
+        group: "vegetables",
       },
     };
   },
