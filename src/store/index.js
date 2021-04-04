@@ -23,7 +23,7 @@ export default new Vuex.Store({
     itemSet: [],
     itemNum: 0,
     totalPrice: 0,
-    searchedText: null,
+    searchedText: '',
     foodTypes: [
       {
         imgName: 'fruits-veg-food',

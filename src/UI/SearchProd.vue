@@ -10,7 +10,8 @@
     </div>
 
     <div class="prod-info">
-      <div class="name">{{ sProd.name }}</div>
+      <!-- <div class="name">{{ sProd.name }}</div> -->
+      <div class="name" v-html="prodName"></div>
       <div class="info">
         <p class="quantity">{{ sProd.quantity }}</p>
         <p>

@@ -44,6 +44,7 @@ export default {
   data() {
     return {
       searchChars: "",
+      num: 0,
       searchPlaceholder: `Search for products (e.g. eggs, milk, potato)`,
     };
   },
@@ -52,9 +53,16 @@ export default {
   // },
   watch: {
     searchChars() {
+      this.num += 1;
       this.$store.commit("takeText", this.searchChars);
-      this.$router.push("/search-list");
+
+      if (this.num === 1) {
+        this.$router.push("/search-list");
+      }
     },
+  },
+  created() {
+    this.num = 0;
   },
 };
 </script>

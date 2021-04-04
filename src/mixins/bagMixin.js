@@ -7,7 +7,14 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["itemSet"]),
+    ...mapGetters(["itemSet", 'searchedText']),
+    prodName() {
+      let name = this.product.name;
+      let text = this.searchedText;
+      let regex = new RegExp(text, 'gi');
+
+      return name.replace(regex, '<strong>' + text + '</strong>');
+    },
     numOfProd() {
       let record = this.itemSet.find(el => el.imgName === this.product.imgName);
       let product;
