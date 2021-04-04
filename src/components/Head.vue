@@ -12,6 +12,7 @@
       <input
         class="search-input"
         type="text"
+        v-model="searchChars"
         :placeholder="searchPlaceholder"
       />
       <ul>
@@ -37,11 +38,23 @@
 </template>
 
 <script>
+// import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
+      searchChars: "",
       searchPlaceholder: `Search for products (e.g. eggs, milk, potato)`,
     };
+  },
+  // computed: {
+  //   ...mapGetters(["isSListOn"]),
+  // },
+  watch: {
+    searchChars() {
+      this.$store.commit("takeText", this.searchChars);
+      this.$router.push("/search-list");
+    },
   },
 };
 </script>

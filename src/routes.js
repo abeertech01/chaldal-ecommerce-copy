@@ -1,4 +1,5 @@
 import Home from './pages/Home.vue';
+import SearchList from './pages/SearchList.vue';
 import FruitsAndVegetables from './pages/typesPages/FruitsAndVegetables.vue';
 import Cooking from './pages/typesPages/Cooking.vue';
 import Beverages from './pages/typesPages/Beverages.vue';
@@ -19,6 +20,7 @@ import Antiseptics from './pages/productsPages/Antiseptics.vue';
 
 export default [
   { path: '/', component: Home },
+  { path: '/search-list', component: SearchList },
   { path: '/fruits-vegetables', component: FruitsAndVegetables },
   { path: '/cooking', component: Cooking },
   { path: '/beverages', component: Beverages },

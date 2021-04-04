@@ -43,7 +43,7 @@ export default {
         quantity: this.foodSupple.quantity,
         price: this.foodSupple.price,
         prodNum: 0,
-        group: "supplements",
+        group: this.foodSupple.group,
       },
     };
   },
@@ -105,7 +105,7 @@ export default {
   margin: 0 auto;
   /* background-color: rgb(255, 236, 172); */
 }
-.food-supplement img {
+.prod-img img {
   width: 100%;
 }
 .prod-info {

@@ -23,6 +23,7 @@ export default new Vuex.Store({
     itemSet: [],
     itemNum: 0,
     totalPrice: 0,
+    searchedText: null,
     foodTypes: [
       {
         imgName: 'fruits-veg-food',
@@ -41,6 +42,9 @@ export default new Vuex.Store({
     urls: [],
   },
   mutations: {
+    takeText(state, payload) {
+      state.searchedText = payload;
+    },
     TAKE_PATHS(state, payload) {
       for (let i = 0; i < payload.length; i++) {
         state.paths.push(payload[i]);
@@ -96,7 +100,6 @@ export default new Vuex.Store({
           state.itemSet.splice(recordIndex, 1);
           state.itemNum--;
           state.totalPrice -= price;
-          state.inBag = false;
         }
       }
     },
@@ -136,6 +139,7 @@ export default new Vuex.Store({
 
       if (record) {
         state.totalPrice -= (product.prodNum * price);
+        state.itemNum--;
         product.prodNum = 0;
         state.itemSet.splice(recordIndex, 1);
       }
@@ -177,11 +181,11 @@ export default new Vuex.Store({
     isBagOpen(state) {
       return state.isBagOpen;
     },
-    // inBag(state) {
-    //   return state.inBag;
-    // },
     totalPrice(state) {
       return state.totalPrice;
+    },
+    searchedText(state) {
+      return state.searchedText;
     },
     itemSet(state) {
       return state.itemSet;

@@ -46,7 +46,7 @@ export default {
         quantity: this.fruit.quantity,
         price: this.fruit.price,
         prodNum: 0,
-        group: "fruits",
+        group: this.fruit.group,
       },
     };
   },
@@ -107,7 +107,7 @@ export default {
   margin: 0 auto;
   /* background-color: rgb(255, 236, 172); */
 }
-.fruit img {
+.prod-img img {
   width: 100%;
 }
 .prod-info {

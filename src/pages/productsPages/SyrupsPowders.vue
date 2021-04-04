@@ -71,8 +71,4 @@ hr {
   margin: 0 20px;
   font-weight: 300;
 }
-.all-types {
-  display: flex;
-  flex-direction: row;
-}
 </style>

@@ -1,17 +1,24 @@
 <template>
-  <div class="antiseptic">
+  <div class="search-prod">
     <div class="prod-img d-flex align-items-center">
       <img
-        :src="require('../../prodImages/antiseptics/' + anti.imgName + '.jpg')"
-        :alt="anti.imgName"
+        :src="
+          require('../prodImages/' + sProd.group + '/' + sProd.imgName + '.jpg')
+        "
+        :alt="sProd.imgName"
       />
     </div>
 
     <div class="prod-info">
-      <div class="name">{{ anti.name }}</div>
+      <div class="name">{{ sProd.name }}</div>
       <div class="info">
-        <p class="quantity">{{ anti.quantity }}</p>
-        <p class="price text-danger">{{ anti.price }}</p>
+        <p class="quantity">{{ sProd.quantity }}</p>
+        <p>
+          <span class="price text-danger">{{ sProd.price }}</span>
+          <small v-if="isOldPrice"
+            ><del> {{ sProd.oldPrice }}</del></small
+          >
+        </p>
       </div>
     </div>
 
@@ -28,27 +35,39 @@
 </template>
 
 <script>
-import bagMixin from "../../mixins/bagMixin";
+import bagMixin from "../mixins/bagMixin";
 
 export default {
-  props: ["anti"],
+  props: ["sProd"],
   mixins: [bagMixin],
   data() {
     return {
       product: {
-        imgName: this.anti.imgName,
-        name: this.anti.name,
-        quantity: this.anti.quantity,
-        price: this.anti.price,
+        imgName: this.sProd.imgName,
+        name: this.sProd.name,
+        quantity: this.sProd.quantity,
+        price: this.sProd.price,
         prodNum: 0,
-        group: this.anti.group,
+        group: this.sProd.group,
       },
     };
+  },
+  computed: {
+    isOldPrice() {
+      if (this.sProd.oldPrice) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
 };
 </script>
 
 <style scoped>
+.highlight {
+  background: rgb(255, 255, 124);
+}
 /*  */
 .bag {
   width: 100%;
@@ -90,7 +109,7 @@ export default {
   border-left: 0.3px solid rgba(0, 0, 0, 0.363);
 }
 /*  */
-.antiseptic {
+.search-prod {
   display: inline-block;
   width: 200px;
   text-align: center;

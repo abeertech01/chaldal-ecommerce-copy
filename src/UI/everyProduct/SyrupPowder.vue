@@ -43,7 +43,7 @@ export default {
         quantity: this.sDrink.quantity,
         price: this.sDrink.price,
         prodNum: 0,
-        group: "syrupsPowders",
+        group: this.sDrink.group,
       },
     };
   },
@@ -105,7 +105,7 @@ export default {
   margin: 0 auto;
   /* background-color: rgb(255, 236, 172); */
 }
-.syrup-powder-ui img {
+.prod-img img {
   width: 100%;
 }
 .prod-info {

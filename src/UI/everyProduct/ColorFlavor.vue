@@ -41,7 +41,7 @@ export default {
         quantity: this.cf.quantity,
         price: this.cf.price,
         prodNum: 0,
-        group: "colorsFlavors",
+        group: this.cf.group,
       },
     };
   },
@@ -103,7 +103,7 @@ export default {
   margin: 0 auto;
   /* background-color: rgb(255, 236, 172); */
 }
-.color-flavor img {
+.prod-img img {
   width: 100%;
 }
 .prod-info {

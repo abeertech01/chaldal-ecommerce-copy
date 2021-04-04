@@ -41,7 +41,7 @@ export default {
         quantity: this.drink.quantity,
         price: this.drink.price,
         prodNum: 0,
-        group: "softDrinks",
+        group: this.drink.group,
       },
     };
   },
@@ -103,7 +103,7 @@ export default {
   margin: 0 auto;
   /* background-color: rgb(255, 236, 172); */
 }
-.soft-drink img {
+.prod-img img {
   width: 100%;
 }
 .prod-info {

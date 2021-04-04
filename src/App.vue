@@ -24,7 +24,7 @@ export default {
     EntireBag,
   },
   computed: {
-    ...mapGetters(["isBagOpen"]),
+    ...mapGetters(["isBagOpen", "searchedText"]),
   },
 };
 </script>

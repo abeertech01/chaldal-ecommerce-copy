@@ -48,7 +48,7 @@ export default {
         quantity: this.vegetable.quantity,
         price: this.vegetable.price,
         prodNum: 0,
-        group: "vegetables",
+        group: this.vegetable.group,
       },
     };
   },
@@ -110,7 +110,7 @@ export default {
   margin: 0 auto;
   /* background-color: rgb(255, 236, 172); */
 }
-.vegetable img {
+.prod-img img {
   width: 100%;
 }
 .prod-info {
