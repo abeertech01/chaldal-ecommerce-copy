@@ -229,6 +229,11 @@ export default {
   created() {
     this.orderTruth();
     this.c1Truth();
+    console.log("created");
+  },
+  destroyed() {
+    this.hideAll();
+    console.log("destroyed");
   },
 };
 </script>

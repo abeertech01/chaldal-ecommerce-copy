@@ -53,16 +53,16 @@ export default {
   // },
   watch: {
     searchChars() {
-      this.num += 1;
+      // this.num += 1;
       this.$store.commit("takeText", this.searchChars);
-
-      if (this.num === 1) {
+      if (this.$route.path !== "/search-list") {
         this.$router.push("/search-list");
       }
     },
-  },
-  created() {
-    this.num = 0;
+    // $route() {
+    //   this.num = 0;
+    //   console.log("route = " + this.num);
+    // },
   },
 };
 </script>
