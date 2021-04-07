@@ -3,10 +3,17 @@
     <!-- Alu Potol Search Box -->
     <div class="alupotol-search">
       <div class="search-box d-flex justify-content-center align-items-center">
-        <span>
+        <div>
           <h1>Groceries Delivered in 1 hour</h1>
-          <input class="d-block" type="text" :placeholder="searchPlaceholder" />
-        </span>
+          <div class="input-div">
+            <input
+              class="d-block"
+              type="text"
+              :placeholder="searchPlaceholder"
+            />
+            <button @click="toSearchList" class="input-btn"></button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -102,6 +109,9 @@ export default {
     ...mapGetters(["steps", "testimonies"]),
   },
   methods: {
+    toSearchList() {
+      this.$router.push("/search-list");
+    },
     // For How To Order
     appearOrderManual() {
       this.oIntervalData = setInterval(() => {
@@ -268,11 +278,25 @@ export default {
   border-radius: 5px;
   outline: none;
   font-size: 17px;
-}
-.search-box input {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.search-box div {
+  position: relative;
+}
+.input-btn {
+  width: 150%;
+  margin-left: -25%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: rgb(135, 222, 157);
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  cursor: text;
 }
 .ad1 {
   display: inline-block;

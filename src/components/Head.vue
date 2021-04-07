@@ -44,12 +44,11 @@ export default {
   data() {
     return {
       searchChars: "",
-      num: 0,
       searchPlaceholder: `Search for products (e.g. eggs, milk, potato)`,
     };
   },
   // computed: {
-  //   ...mapGetters(["isSListOn"]),
+  //   ...mapGetters(["isSearchOn"]),
   // },
   watch: {
     searchChars() {
@@ -59,10 +58,6 @@ export default {
         this.$router.push("/search-list");
       }
     },
-    // $route() {
-    //   this.num = 0;
-    //   console.log("route = " + this.num);
-    // },
   },
 };
 </script>
