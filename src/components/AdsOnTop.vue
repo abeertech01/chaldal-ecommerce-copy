@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center">
-    <div :class="{ 'get-down': isBagOpen }" class="ads">
+    <div class="get-down ads">
       <div class="ad1"></div>
       <div class="ad2"></div>
     </div>

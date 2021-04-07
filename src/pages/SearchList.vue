@@ -1,6 +1,6 @@
 <template>
   <div class="search-list">
-    <div :class="{ 'get-down': isBagOpen }" class="headline">
+    <div class="get-down headline">
       <hr />
       <h4 class="name">Search Results</h4>
       <hr />

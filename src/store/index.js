@@ -24,6 +24,7 @@ export default new Vuex.Store({
     itemNum: 0,
     totalPrice: 0,
     searchedText: '',
+    prodTypes: ['food', 'healthCare'],
     foodTypes: [
       {
         imgName: 'fruits-veg-food',
@@ -172,6 +173,9 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    prodTypes(state) {
+      return state.prodTypes;
+    },
     foodTypes(state) {
       return state.foodTypes;
     },
