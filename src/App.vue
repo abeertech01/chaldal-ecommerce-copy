@@ -2,8 +2,8 @@
   <div id="app">
     <head-vue class="head-app"></head-vue>
     <short-bag-info class="short-bag-app"></short-bag-info>
-    <div :class="{ 'with-navmenu-app': true }">
-      <div class="navmenu-div-app">
+    <div :class="{ 'with-navmenu-app': isMenuOpen }">
+      <div v-if="isMenuOpen" :class="{ 'navmenu-div-app': true }">
         <nav-menu class="navmenu-app"></nav-menu>
       </div>
       <div :class="{ 'main-page-app': isBagOpen }">
@@ -31,7 +31,7 @@ export default {
     NavMenu,
   },
   computed: {
-    ...mapGetters(["isBagOpen", "searchedText"]),
+    ...mapGetters(["isBagOpen", "searchedText", "isMenuOpen"]),
   },
 };
 </script>
@@ -39,6 +39,7 @@ export default {
 <style>
 .head-app {
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 4;
 }
@@ -76,7 +77,7 @@ export default {
   box-sizing: border-box;
   height: 100vh;
   position: fixed;
-  background: rgb(255, 153, 0);
+  border-right: 0.1px solid rgb(212, 212, 212);
   left: 0;
   top: 0;
   z-index: 3;

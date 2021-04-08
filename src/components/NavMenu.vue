@@ -1,9 +1,14 @@
 <template>
   <div class="navmenu">
-    <ul class="prod-list">
-      <li>Food</li>
-      <li>Health Care</li>
-    </ul>
+    <div class="type-list">
+      <div class="type-prod food" @click="clickFood">
+        <i class="fas fa-leaf"></i> Food
+      </div>
+
+      <div class="type-prod health-care" @click="clickHealth">
+        <i class="fas fa-heartbeat"></i> Health Care
+      </div>
+    </div>
   </div>
 </template>
 
@@ -15,12 +20,11 @@ export default {
     ...mapGetters(["prodTypes"]),
   },
   methods: {
-    prodClick(ev) {
-      if (ev === "food") {
-        console.log(ev);
-      } else if (ev === "healthCare") {
-        console.log(ev);
-      }
+    clickFood() {
+      this.$router.push("/food");
+    },
+    clickHealth() {
+      this.$router.push("/health-care");
     },
   },
 };
@@ -31,13 +35,16 @@ export default {
   padding-top: 55px;
   width: 230px;
 }
-.prod-list {
-  list-style: none;
-  padding-top: 20px;
-  list-style-position: outside;
+.type-list {
+  padding: 10px 0 10px 10px;
 }
-.prod-list li {
-  width: 100%;
-  background: palevioletred;
+.food-list {
+  padding-left: 15px;
+}
+.type-prod {
+  cursor: pointer;
+}
+.food {
+  margin-bottom: 10px;
 }
 </style>

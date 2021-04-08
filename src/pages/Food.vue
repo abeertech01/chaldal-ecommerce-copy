@@ -33,6 +33,15 @@ export default {
   computed: {
     ...mapGetters(["foodTypes"]),
   },
+  methods: {
+    setPath() {
+      this.$store.dispatch("clearPaths");
+      this.$store.dispatch("clearUrls");
+    },
+  },
+  created() {
+    this.setPath();
+  },
 };
 </script>
 

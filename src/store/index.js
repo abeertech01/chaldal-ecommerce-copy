@@ -20,6 +20,7 @@ export default new Vuex.Store({
   state: {
     bag: [], //change    
     isBagOpen: false,
+    isMenuOpen: false,
     itemSet: [],
     itemNum: 0,
     totalPrice: 0,
@@ -145,6 +146,9 @@ export default new Vuex.Store({
         state.itemSet.splice(recordIndex, 1);
       }
     },
+    toggleMenu(state) {
+      state.isMenuOpen = !state.isMenuOpen;
+    },
     openBag(state) {
       state.isBagOpen = true;
     },
@@ -184,6 +188,9 @@ export default new Vuex.Store({
     },
     isBagOpen(state) {
       return state.isBagOpen;
+    },
+    isMenuOpen(state) {
+      return state.isMenuOpen;
     },
     totalPrice(state) {
       return state.totalPrice;

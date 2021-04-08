@@ -2,9 +2,9 @@
   <div class="head">
     <!-- Start -->
     <nav class="navbar">
-      <a class="menu-icon pt-1 text-dark" href="#"
+      <span @click="menuClicked" class="menu-icon pt-1 text-dark"
         ><i class="fas fa-bars"></i
-      ></a>
+      ></span>
       <router-link to="/" class="logo text-dark">
         <img src="../assets/egg.png" alt="" />
         <span class="logo-name font-weight-bold">Alupotol</span>
@@ -53,6 +53,12 @@ export default {
   // computed: {
   //   ...mapGetters(["isSearchOn"]),
   // },
+  methods: {
+    menuClicked() {
+      this.$store.commit("toggleMenu");
+      console.log("menu clicked");
+    },
+  },
   watch: {
     searchChars() {
       // this.num += 1;
