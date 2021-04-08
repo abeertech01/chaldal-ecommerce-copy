@@ -14,6 +14,8 @@
         type="text"
         v-model="searchChars"
         :placeholder="searchPlaceholder"
+        :autofocus="focusOn"
+        ref="inputFocus"
       />
       <ul>
         <li class="location">
@@ -44,6 +46,7 @@ export default {
   data() {
     return {
       searchChars: "",
+      focusOn: false,
       searchPlaceholder: `Search for products (e.g. eggs, milk, potato)`,
     };
   },
@@ -58,6 +61,17 @@ export default {
         this.$router.push("/search-list");
       }
     },
+    $route() {
+      if (this.$route.path === "/search-list") {
+        this.$refs.inputFocus.focus();
+        this.focusOn = true;
+      } else {
+        this.focusOn = false;
+      }
+    },
+  },
+  created() {
+    this.focusOn = true;
   },
 };
 </script>
