@@ -70,8 +70,29 @@
     <!-- Footer -->
     <footer class="pt-5 pb-5">
       <h3 class="text-center">
-        <i class="fa fa-copyright" aria-hidden="true"></i> Made By Abeer
+        <i class="fa fa-copyright" aria-hidden="true"></i> 2021 - Made By Abeer
       </h3>
+      <div class="socials">
+        <a
+          href="https://twitter.com/abeertech01"
+          target="_blank"
+          class="twitter mr-2"
+          ><i class="fab fa-twitter-square"></i>
+        </a>
+        <a
+          href="https://github.com/abeertech01"
+          target="_blank"
+          class="github mr-2"
+          ><i class="fab fa-github-square"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/abeertech01/"
+          target="_blank"
+          class="linkedin"
+        >
+          <i class="fab fa-linkedin"></i
+        ></a>
+      </div>
     </footer>
   </div>
 </template>
@@ -302,7 +323,7 @@ export default {
   display: inline-block;
   height: 150px;
   width: 49.9%;
-  background-image: url("https://source.unsplash.com/1600x900/?vegetables,ingredients,cooking");
+  background-image: url("../adImages/pic-2.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -311,7 +332,7 @@ export default {
   float: right;
   height: 150px;
   width: 49.9%;
-  background-image: url("https://source.unsplash.com/1600x900/?cooking,ingredients,vegetables");
+  background-image: url("../adImages/pic-3.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -335,5 +356,13 @@ export default {
 }
 footer {
   background-color: #fdd670;
+}
+footer .socials {
+  text-align: center;
+  font-size: 30px;
+}
+footer .socials a {
+  color: black;
+  text-decoration: none;
 }
 </style>

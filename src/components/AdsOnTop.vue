@@ -29,7 +29,7 @@ export default {
   display: inline-block;
   width: 49.9%;
   height: 200px;
-  background-image: url("https://source.unsplash.com/1600x900/?vegetables,salad");
+  background-image: url("../adImages/pic-1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@ export default {
   float: right;
   width: 49.9%;
   height: 200px;
-  background-image: url("https://source.unsplash.com/1600x900/?salad,vegetables");
+  background-image: url("../adImages/pic-4.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
