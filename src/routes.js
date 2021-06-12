@@ -18,6 +18,8 @@ import SyrupsPowders from './pages/productsPages/SyrupsPowders.vue';
 import FoodSupplements from './pages/productsPages/FoodSupplements.vue';
 import Antiseptics from './pages/productsPages/Antiseptics.vue';
 
+import NotFound from './pages/NotFound.vue';
+
 export default [
   { path: '/', component: Home },
   { path: '/search-list', component: SearchList },
@@ -38,4 +40,5 @@ export default [
 
   { path: '/food-supplements', component: FoodSupplements },
   { path: '/antiseptics', component: Antiseptics },
+  { path: '/:notFound(.*)', component: NotFound }
 ]
